@@ -16,6 +16,8 @@
 
 var name='<?php echo "elineda"?>';
 var password='<?php echo "$2y$10\$mnfm6Z7F5to12OULtUKu0.0oFRY9xXR3X.lTiCXVCcPnXqRZw/z8y"?>';
+var ert="azeazeaz";
+console.log(ert.length);
 </script>
 <header>
 
@@ -65,10 +67,13 @@ var password='<?php echo "$2y$10\$mnfm6Z7F5to12OULtUKu0.0oFRY9xXR3X.lTiCXVCcPnXq
             <div class="col-lg-8">
 
         <div id="app">
-          <nav>
-            <router-link to="/aionGRPlaravel/public/mycharacters">My Characters</router-link>
-            <router-link to="/aionGRPlaravel/public/searchcharacters">Search Characters</router-link>
-            <router-link to="/aionGRPlaravel/public/accountfusion">Account Fusion</router-link>
+            <h3>Character Sheet</h3>
+          <nav class="navapp">
+              <ul>
+                  <li> <router-link to="/aionGRPlaravel/public/mycharacters">My Characters</router-link></li>
+                  <li>  <router-link to="/aionGRPlaravel/public/searchcharacters">Search Characters</router-link></li>
+                  <li> <router-link to="/aionGRPlaravel/public/accountfusion">Account Fusion</router-link></li>
+              </ul>
           </nav>
           <router-view></router-view>
         </div>

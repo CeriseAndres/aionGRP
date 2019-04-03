@@ -8,7 +8,7 @@
             <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
             <p class="card-text">{{perso.player_class}}</p>
             <p class="card-text">{{perso.house}}</p>
-            <p class="card-text">{{ perso.description | providerDescriptionExcerpt }}</p>
+            <p class="card-text">{{ perso.description | providerDescription}}</p>
 
             <a href="#" class="btn btn-lg btn-block">
               <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff">Modify</router-link>
@@ -42,12 +42,15 @@ export default {
           $.getJSON(url, function (data) {
               self.tab=data;
               console.log(data);
+            var truc="mehakihazoiehaozihdaz";
+
           });
         });
       }
     },
    mounted() {
      this.takeTen()
+
    },
    watch: {
      '$route' (to, from) {
@@ -57,19 +60,20 @@ export default {
    beforeRouteUpdate (to, from, next) {
      this.takeTen();
    },
-   filter: {
-        providerDescriptionExcerpt: function() {
-            var result = '';
-            if (this.providerDescription.length < 10) {
+   filters: {
+        providerDescription: function(value) {
+            if (!value) return '';
+            if (value.length < 25) {
 
-                result = this.providerDescription;
+               var result = value;
             }
             else {
 
-                result = this.providerDescription.substring(0, 9) + ' [...]';
+               var result = value.substring(0, 25) + ' [...]';
             }
 
             return result;
+
         }
     }
 }
