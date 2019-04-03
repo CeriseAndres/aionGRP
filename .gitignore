@@ -10,3 +10,4 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /app/Http/Controllers/DbAionConnect.php
+/resources/views/welcome.blade.php
