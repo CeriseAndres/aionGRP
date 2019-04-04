@@ -8,6 +8,7 @@ import MyCharacters from './components/MyCharacters.vue'
 import SearchCharacters from './components/SearchCharacters.vue'
 import AccountFusion from './components/AccountFusion.vue'
 import ModifCharac from './components/ModifCharac.vue'
+import ViewCharac from './components/ViewCharac.vue'
 
 const router = new VueRouter({
     mode: 'history',
@@ -31,6 +32,11 @@ const router = new VueRouter({
             path:'/aionGRPlaravel/public/modifcharac/:id',
             name: 'modifcharac',
             component: ModifCharac,
+        },
+        {
+            path:'/aionGRPlaravel/public/viewcharac/:id',
+            name: 'viewcharac',
+            component: ViewCharac,
         },
     ],
 });

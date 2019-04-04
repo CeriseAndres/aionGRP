@@ -22,19 +22,17 @@
     background-color: #0b98de;
 
   }
-    nav a {
-      display: block;
-      float: left;
-      font-size: 9px;
-      color: white;
-      background-color: #17b0cf;
-      border: 1px solid #000;
-      padding-top: 20px;
-      padding-right: 10px;
-      padding-bottom: 10px;
-      padding-left: 10px;
-      text-decoration: none;
-   }
-  nav a:hover {
-  }
+  nav a {
+    display: block;
+    float: left;
+    font-size: 9px;
+    color: white;
+    background-color: #17b0cf;
+    border: 1px solid #000;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+ }
 </style>

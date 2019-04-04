@@ -9,10 +9,10 @@
             <p class="card-text">{{perso.player_class}}</p>
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
-
-              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><a href="#" class="btn btn-lg btn-block">Modify</a></router-link>
-
-
+            <div id="bottom">
+              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Modify</button></router-link>
+              <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -89,11 +89,19 @@ export default {
   border-radius: 12px;
   width: 200px;
   max-width: 200px;
-  box-style: border-box;
+  height: 400px;
   background: rgba(154,83,254,0.5);
 }
-.btn{
+#bottom{
+  display: flex;
+  flex-direction: column;
   margin-top: auto;
+}
+#bottom a:last-child{
+  margin-top: 10px;
+}
+.btn{
+  display: inline-block;
   background-color: rgba(154,83,254,1);
 }
 h2{

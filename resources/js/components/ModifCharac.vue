@@ -6,7 +6,7 @@
       <input type="text" class="form-control" v-model="house" name="house">
       <label for="exampleFormControlTextarea1">DESCRIPTION</label>
       <textarea class="form-control" v-model="description" name="description" rows="3"></textarea>
-      <a v-on:click="modify" class="btn btn-lg btn-block">retour</a>
+      <a v-on:click="modify" class="btn btn-lg btn-block">accept</a>
     </div>
   </form>
 </template>
