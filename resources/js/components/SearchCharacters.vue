@@ -13,7 +13,6 @@
           <p class="card-text">{{perso.house}}</p>
           <p class="card-text">{{ perso.description}}</p>
           <div id="bottom">
-            <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Modify</button></router-link>
             <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
           </div>
         </div>
