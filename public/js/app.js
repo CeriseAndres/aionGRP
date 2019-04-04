@@ -90,13 +90,103 @@
 /*!************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AccountFusion.vue?vue&type=script&lang=js& ***!
   \************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'AccountFusion',
+  data: function data() {
+    return {
+      api: "",
+      idplayer: "",
+      tab: [],
+      players: [],
+      aionname: "",
+      aionpass: ""
+    };
+  },
+  methods: {
+    takeList: function takeList() {
+      var self = this;
+      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
+        self.api = data;
+        var url = "http://localhost/aionGRP/api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeAcc";
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
+          self.tab = data;
+
+          for (var i = 0; i < self.tab.length; i++) {
+            var url = "http://localhost/aionGRP/api.php?w=getAcc&name=" + name + "&api=" + self.api + "&id=" + self.tab[i][0];
+            console.log(url);
+            jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
+              self.players.push(data);
+            });
+          }
+        });
+      });
+    },
+    getplayers: function getplayers() {
+      console.log(this.players);
+    },
+    link: function link() {
+      var self = this;
+      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
+        var url = "http://localhost/aionGRP/api.php?w=account&name=" + name + "&api=" + self.api;
+        var arr = {
+          user: self.aionname,
+          password: self.aionpass
+        };
+        console.log(arr);
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+          url: url,
+          type: 'POST',
+          data: JSON.stringify(arr),
+          contentType: 'application/json;',
+          dataType: 'json',
+          async: true,
+          success: function success(msg) {}
+        });
+        console.log('ok');
+        self.takeList();
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.takeList();
+  },
+  watch: {
+    '$route': function $route(to, from) {}
+  },
+  beforeRouteUpdate: function beforeRouteUpdate(to, from, next) {}
+});
 
 /***/ }),
 
@@ -329,7 +419,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody{\n    overflow-wrap: break-word;\n}\n", ""]);
+exports.push([module.i, "\nbody{\r\n    overflow-wrap: break-word;\n}\r\n", ""]);
 
 // exports
 
@@ -348,7 +438,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 200px;\n  max-width: 200px;\n  box-style: border-box;\n  background: rgba(154,83,254,0.5);\n}\n.btn{\n  margin-top: auto;\n  background-color: rgba(154,83,254,1);\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.card-container{\r\n    padding:10px;\n}\n.card-body{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  width: 200px;\r\n  max-width: 200px;\r\n  box-style: border-box;\r\n  background: rgba(154,83,254,0.5);\n}\n.btn{\r\n  margin-top: auto;\r\n  background-color: rgba(154,83,254,1);\n}\nh2{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\n  margin:5px 0;\n}\np{\r\n  width:100%;\r\n  color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -11870,7 +11960,77 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    [
+      _c("h3", [_vm._v("My characters liked")]),
+      _vm._v(" "),
+      _c("p", [_vm._v("There is the list of characters imported here")]),
+      _vm._v(" "),
+      _vm._l(_vm.players, function(account) {
+        return _c(
+          "div",
+          _vm._l(account, function(player) {
+            return _c("ul", [_c("li", [_vm._v(_vm._s(player.name))])])
+          }),
+          0
+        )
+      }),
+      _vm._v(" "),
+      _c("div", [
+        _c("p", [
+          _vm._v(
+            "If you want import or update some character ty to login here with youre aion GRP account"
+          )
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.aionname,
+              expression: "aionname"
+            }
+          ],
+          attrs: { type: "text" },
+          domProps: { value: _vm.aionname },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.aionname = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.aionpass,
+              expression: "aionpass"
+            }
+          ],
+          attrs: { type: "password" },
+          domProps: { value: _vm.aionpass },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.aionpass = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("input", { attrs: { type: "submit" }, on: { click: _vm.link } })
+      ])
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -26860,15 +27020,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*!***************************************************!*\
   !*** ./resources/js/components/AccountFusion.vue ***!
   \***************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AccountFusion_vue_vue_type_template_id_3a449094___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccountFusion.vue?vue&type=template&id=3a449094& */ "./resources/js/components/AccountFusion.vue?vue&type=template&id=3a449094&");
 /* harmony import */ var _AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccountFusion.vue?vue&type=script&lang=js& */ "./resources/js/components/AccountFusion.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -26898,15 +27057,13 @@ component.options.__file = "resources/js/components/AccountFusion.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/AccountFusion.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AccountFusion.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AccountFusion.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -27189,8 +27346,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
