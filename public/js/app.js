@@ -394,7 +394,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchCharacters',
@@ -499,7 +498,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody{\r\n    overflow-wrap: break-word;\n}\r\n", ""]);
+exports.push([module.i, "\nbody{\n    overflow-wrap: break-word;\n}\n", ""]);
 
 // exports
 
@@ -518,7 +517,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\r\n    padding:10px;\n}\n.card-body{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  width: 200px;\r\n  max-width: 200px;\r\n  height: 400px;\r\n  background: rgba(154,83,254,0.5);\n}\n#bottom{\r\n  display: flex;\r\n  flex-direction: column;\r\n  margin-top: auto;\n}\n#bottom a:last-child{\r\n  margin-top: 10px;\n}\n.btn{\r\n  display: inline-block;\r\n  background-color: rgba(154,83,254,1);\n}\nh2{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\n  margin:5px 0;\n}\np{\r\n  width:100%;\r\n  color: black;\n}\r\n", ""]);
+exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 200px;\n  max-width: 200px;\n  height: 400px;\n  background: rgba(154,83,254,0.5);\n}\n#bottom{\n  display: flex;\n  flex-direction: column;\n  margin-top: auto;\n}\n#bottom a:last-child{\n  margin-top: 10px;\n}\n.btn{\n  display: inline-block;\n  background-color: rgba(154,83,254,1);\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
 
 // exports
 
@@ -537,7 +536,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card{\r\n  padding: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  width: 400px;\r\n  background: rgba(154,83,254,0.5);\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.card{\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 400px;\n  background: rgba(154,83,254,0.5);\n}\n\n", ""]);
 
 // exports
 
@@ -12427,28 +12426,6 @@ var render = function() {
               "div",
               { attrs: { id: "bottom" } },
               [
-                _c(
-                  "router-link",
-                  {
-                    staticStyle: { color: "#ffffff" },
-                    attrs: {
-                      to:
-                        "/aionGRPlaravel/public/modifcharac/" +
-                        perso.character_id
-                    }
-                  },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-lg btn-block",
-                        attrs: { type: "button" }
-                      },
-                      [_vm._v("Modify")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
                 _c(
                   "router-link",
                   {
@@ -27348,14 +27325,15 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*!***************************************************!*\
   !*** ./resources/js/components/AccountFusion.vue ***!
   \***************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AccountFusion_vue_vue_type_template_id_3a449094___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AccountFusion.vue?vue&type=template&id=3a449094& */ "./resources/js/components/AccountFusion.vue?vue&type=template&id=3a449094&");
 /* harmony import */ var _AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AccountFusion.vue?vue&type=script&lang=js& */ "./resources/js/components/AccountFusion.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _AccountFusion_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -27385,7 +27363,7 @@ component.options.__file = "resources/js/components/AccountFusion.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/AccountFusion.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -27761,8 +27739,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
