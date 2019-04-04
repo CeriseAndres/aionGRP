@@ -217,7 +217,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'MyCharacters',
@@ -330,7 +329,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody{\r\n    overflow-wrap: break-word;\n}\r\n", ""]);
+exports.push([module.i, "\nbody{\n    overflow-wrap: break-word;\n}\n", ""]);
 
 // exports
 
@@ -349,7 +348,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\r\n    padding:10px;\n}\n.card-body{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  width: 200px;\r\n  max-width: 200px;\r\n  box-style: border-box;\r\n  background: rgba(154,83,254,0.5);\n}\n.btn{\r\n  margin-top: auto;\r\n  background-color: rgba(154,83,254,1);\n}\nh2{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\n  margin:5px 0;\n}\np{\r\n  width:100%;\r\n  color: black;\n}\r\n", ""]);
+exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 200px;\n  max-width: 200px;\n  box-style: border-box;\n  background: rgba(154,83,254,0.5);\n}\n.btn{\n  margin-top: auto;\n  background-color: rgba(154,83,254,1);\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
 
 // exports
 
@@ -11985,47 +11984,53 @@ var render = function() {
       { staticClass: "card-group" },
       _vm._l(_vm.tab, function(perso) {
         return _c("div", { staticClass: "card-container text-center" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("h2", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(perso.name))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(perso.gender) + " - " + _vm._s(perso.race))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(perso.player_class))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(perso.house))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(_vm._f("providerDescription")(perso.description)))
-            ]),
-            _vm._v(" "),
-            _c(
-              "a",
-              { staticClass: "btn btn-lg btn-block", attrs: { href: "#" } },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticStyle: { color: "#ffffff" },
-                    attrs: {
-                      to:
-                        "/aionGRPlaravel/public/modifcharac/" +
-                        perso.character_id
-                    }
-                  },
-                  [_vm._v("Modify")]
-                )
-              ],
-              1
-            )
-          ])
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c("h2", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(perso.name))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(perso.gender) + " - " + _vm._s(perso.race))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(perso.player_class))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(perso.house))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(_vm._f("providerDescription")(perso.description)))
+              ]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticStyle: { color: "#ffffff" },
+                  attrs: {
+                    to:
+                      "/aionGRPlaravel/public/modifcharac/" + perso.character_id
+                  }
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-lg btn-block",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("Modify")]
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ])
       }),
       0
@@ -27184,8 +27189,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

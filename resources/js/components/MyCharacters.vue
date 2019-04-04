@@ -10,9 +10,8 @@
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
 
-            <a href="#" class="btn btn-lg btn-block">
-              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff">Modify</router-link>
-            </a>
+              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><a href="#" class="btn btn-lg btn-block">Modify</a></router-link>
+
 
           </div>
         </div>
