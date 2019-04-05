@@ -1898,13 +1898,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1959,7 +1952,7 @@ __webpack_require__.r(__webpack_exports__);
           'content-type': 'multipart/form-data'
         }
       };
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost/aionGRP/test.php', formData, config).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost/aionGRP/test.php?id=' + self.$route.params.id, formData, config).then(function (response) {
         console.log('marche' + response.data.success);
       }).catch(function (error) {
         console.log('erreur' + error);
@@ -2227,7 +2220,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody{\n    overflow-wrap: break-word;\n}\n.btn-file {\n    position: relative;\n    overflow: hidden;\n}\n.btn-file input[type=file] {\n    position: absolute;\n    top: 0;\n    right: 0;\n    min-width: 100%;\n    min-height: 100%;\n    font-size: 100px;\n    text-align: right;\n    filter: alpha(opacity=0);\n    opacity: 0;\n    outline: none;\n    background: white;\n    cursor: inherit;\n    display: block;\n}\n#img-upload{\n    width: 100%;\n}\n", ""]);
+exports.push([module.i, "\nbody{\n    overflow-wrap: break-word;\n}\n.form-control{\n  padding: 1px;\n}\n.input-group > .form-control, .input-group > .form-control-plaintext {\n  width: 100%;\n  height: 100%;\n  pointer: cursor;\n}\n.btn:hover {\n  background-color: #8746ff;\n  font-weight: bold;\n}\n.input-group > .form-control:not(:last-child) {\n  border-radius: 4px;\n}\n", ""]);
 
 // exports
 
@@ -13993,46 +13986,35 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _c(
+      "form",
+      {
+        attrs: { enctype: "multipart/form-data", id: "fupForm" },
+        on: { submit: _vm.test }
+      },
+      [
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", { staticClass: "input-group" }, [
+            _c("label", { attrs: { for: "file" } }, [_vm._v("UPLOAD IMAGE")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "form-control",
+              attrs: { type: "file", id: "file", name: "file", required: "" },
+              on: { change: _vm.onImageChange }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "btn submitBtn",
+              attrs: { type: "submit", name: "submit", value: "SAVE" }
+            }),
+            _c("br")
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
     _c("form", [
       _c("div", { staticClass: "form-group" }, [
-        _c("label", [_vm._v("Upload Image")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input-group" }, [
-          _c("span", { staticClass: "input-group-btn" }, [
-            _c("span", { staticClass: "btn btn-default btn-file" }, [
-              _vm._v("\n                  Browse… "),
-              _c("input", {
-                attrs: { type: "file", id: "imgInp" },
-                on: { change: _vm.onImageChange }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.nameImg,
-                expression: "nameImg"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text" },
-            domProps: { value: _vm.nameImg },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.nameImg = $event.target.value
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("img", { attrs: { id: "img-upload" } }),
-        _vm._v(" "),
         _c("label", { attrs: { for: "formInput" } }, [_vm._v("HOUSE")]),
         _vm._v(" "),
         _c("input", {
@@ -14056,6 +14038,7 @@ var render = function() {
             }
           }
         }),
+        _c("br"),
         _vm._v(" "),
         _c("label", { attrs: { for: "formControlTextarea" } }, [
           _vm._v("DESCRIPTION")
@@ -14089,31 +14072,7 @@ var render = function() {
           [_vm._v("accept")]
         )
       ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "form",
-      {
-        attrs: { enctype: "multipart/form-data", id: "fupForm" },
-        on: { submit: _vm.test }
-      },
-      [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "file" } }, [_vm._v("File")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: { type: "file", id: "file", name: "file", required: "" },
-            on: { change: _vm.onImageChange }
-          }),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "btn btn-danger submitBtn",
-            attrs: { type: "submit", name: "submit", value: "SAVE" }
-          })
-        ])
-      ]
-    )
+    ])
   ])
 }
 var staticRenderFns = []

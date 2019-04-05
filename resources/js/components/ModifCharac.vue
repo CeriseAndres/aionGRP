@@ -1,35 +1,28 @@
 
 <template>
   <div>
-  <form>
-    <div class="form-group">
 
-      <label>Upload Image</label>
-      <div class="input-group">
-          <span class="input-group-btn">
-              <span class="btn btn-default btn-file">
-                  Browse… <input type="file" id="imgInp" v-on:change="onImageChange">
-              </span>
-          </span>
-          <input type="text" class="form-control" v-model="nameImg">
+    <form enctype="multipart/form-data"  @submit="test" id="fupForm" >
+      <div class="form-group">
+        <div class="input-group">
+            <label for="file">UPLOAD IMAGE</label>
+              <input type="file" class="form-control" id="file" v-on:change="onImageChange" name="file" required />
+            <input type="submit" name="submit"  class="btn submitBtn" value="SAVE"/><br>
+        </div>
       </div>
-      <img id='img-upload'/>
+    </form>
 
-      <label for="formInput">HOUSE</label>
-      <input type="text" class="form-control" v-model="house" name="house">
-      <label for="formControlTextarea">DESCRIPTION</label>
-      <textarea class="form-control" v-model="description" name="description" rows="3"></textarea>
-      <a v-on:click="modify" class="btn btn-lg btn-block">accept</a>
-    </div>
-  </form>
-<form enctype="multipart/form-data"  @submit="test" id="fupForm" >
-  <div class="form-group">
-        <label for="file">File</label>
-        <input type="file" class="form-control" id="file" v-on:change="onImageChange" name="file" required />
-        <input type="submit" name="submit"  class="btn btn-danger submitBtn" value="SAVE"/>
-    </div>
-</form>
-</div>
+    <form>
+      <div class="form-group">
+        <label for="formInput">HOUSE</label>
+        <input type="text" class="form-control" v-model="house" name="house"><br>
+        <label for="formControlTextarea">DESCRIPTION</label>
+        <textarea class="form-control" v-model="description" name="description" rows="3"></textarea>
+        <a v-on:click="modify" class="btn btn-lg btn-block">accept</a>
+      </div>
+    </form>
+
+  </div>
 </template>
 
 <script>
@@ -84,7 +77,7 @@ export default {
 
 }
 
-         axios.post('http://localhost/aionGRP/test.php', formData, config)
+         axios.post('http://localhost/aionGRP/test.php?id='+self.$route.params.id, formData, config)
          .then(function (response) {
                console.log('marche'+response.data.success);
              })
@@ -118,32 +111,25 @@ export default {
    }
 }
 </script>
-<style>
-body{
-    overflow-wrap: break-word;
-  }
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
 
-#img-upload{
+<style>
+  body{
+      overflow-wrap: break-word;
+  }
+  .form-control{
+    padding: 1px;
+  }
+  .input-group > .form-control, .input-group > .form-control-plaintext {
     width: 100%;
-}
+    height: 100%;
+    pointer: cursor;
+  }
+  .btn:hover {
+    background-color: #8746ff;
+    font-weight: bold;
+  }
+  .input-group > .form-control:not(:last-child) {
+    border-radius: 4px;
+  }
 </style>
 </script>
