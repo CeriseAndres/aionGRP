@@ -6,7 +6,7 @@
       <div class="form-group">
         <div class="input-group">
             <label for="file">UPLOAD IMAGE</label>
-              <input type="file" class="form-control" id="file" v-on:change="onImageChange" name="file" required />
+            <input type="file" class="form-control" id="file" v-on:change="onImageChange" name="file" required />
             <input type="submit" name="submit"  class="btn submitBtn" value="SAVE"/><br>
         </div>
       </div>
