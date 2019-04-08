@@ -78,7 +78,7 @@ export default {
            headers: { 'content-type': 'multipart/form-data' }
          }
 
-         axios.post('http://localhost/aionGRP/api.php?w=blog&v=imgsend&id='+self.$route.params.id, formData, config)
+         axios.post('http://localhost/aionGRP/api.php?w=blog&v=imgsend&id='+"&name="+name+"&api="+self.api+self.$route.params.id, formData, config)
          .then(function (response) {
                console.log('marche'+response.data.success);
                alert('image uploaded');

@@ -2017,7 +2017,7 @@ __webpack_require__.r(__webpack_exports__);
           'content-type': 'multipart/form-data'
         }
       };
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost/aionGRP/api.php?w=blog&v=imgsend&id=' + self.$route.params.id, formData, config).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost/aionGRP/api.php?w=blog&v=imgsend&id=' + "&name=" + name + "&api=" + self.api + self.$route.params.id, formData, config).then(function (response) {
         console.log('marche' + response.data.success);
         alert('image uploaded');
       }).catch(function (error) {
