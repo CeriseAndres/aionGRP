@@ -9,6 +9,7 @@
             <input type="file" class="form-control" id="file" v-on:change="onImageChange" name="file" required />
             <input type="submit" name="submit"  class="btn submitBtn" value="SAVE"/><br>
         </div>
+        <img class="img-thumbnail rounded mx-auto d-block" v-bind:src="imagePreview" v-show="showPreview"/>
       </div>
     </form>
 
@@ -39,6 +40,8 @@ export default {
       image:"",
       nameImg:"",
       filee:"",
+      showPreview: false,
+      imagePreview: ''
     }
   },
   methods: {
@@ -59,7 +62,7 @@ export default {
               async: true,
               success: function(msg) {
                 console.log('ok');
-
+                alert('change accepted')
               }
           });
           self.$router.push({name: 'mycharacters'});
@@ -72,14 +75,13 @@ export default {
          let formData = new FormData();
          formData.append('image', self.image);
          const config = {
+           headers: { 'content-type': 'multipart/form-data' }
+         }
 
-    headers: { 'content-type': 'multipart/form-data' }
-
-}
-
-         axios.post('http://localhost/aionGRP/test.php?id='+self.$route.params.id, formData, config)
+         axios.post('http://localhost/aionGRP/api.php?w=blog&v=imgsend&id='+self.$route.params.id, formData, config)
          .then(function (response) {
                console.log('marche'+response.data.success);
+               alert('image uploaded');
              })
             .catch(function (error) {
                    console.log('erreur'+error);
@@ -102,8 +104,15 @@ export default {
         });
       },
       onImageChange: function(e){
+        var self=this;
         console.log(e.target.files[0]);
-        this.image = e.target.files[0];
+        self.image = e.target.files[0];
+        let reader  = new FileReader();
+        reader.addEventListener("load", function () {
+          self.showPreview = true;
+          self.imagePreview = reader.result;
+        }.bind(self), false);
+        reader.readAsDataURL( self.image );
       },
     },
    mounted() {
@@ -132,4 +141,3 @@ export default {
     border-radius: 4px;
   }
 </style>
-</script>

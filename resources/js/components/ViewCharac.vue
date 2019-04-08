@@ -11,7 +11,7 @@
           <p class="card-text text-left"><strong>HOUSE:</strong> {{tab.house}}</p>
           <p class="card-text"><strong>DESCRIPTION:</strong></p>
           <p class="card-text">{{ tab.description}}</p>
-
+          <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Gallery</button></router-link>
 
     </div>
   </div>
