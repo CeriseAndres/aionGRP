@@ -38,11 +38,9 @@ export default {
         var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url="http://localhost/aionGRP/api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeTen&off=0";
+          var url="http://localhost/aionGRP/api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeMy&off=0";
           $.getJSON(url, function (data) {
               self.tab=data;
-              console.log(data);
-            var truc="mehakihazoiehaozihdaz";
 
           });
         });
