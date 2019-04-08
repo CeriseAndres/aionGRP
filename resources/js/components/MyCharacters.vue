@@ -1,17 +1,17 @@
 <template>
   <div class="container">
-      <div class="card-group">
-        <div class="card-container text-center" v-for="perso in tab">
+      <div class="card-group ">
+        <div class="card-container text-center col-md-6" v-for="perso in tab">
           <!-- <img src="..." class="card-img-top" alt="..."> -->
-          <div class="card-body">
+          <div class="card-body ">
             <h2 class="card-title">{{perso.name}}</h2>
             <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
-            <p class="card-text">{{perso.player_class}}</p>
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
             <div id="bottom">
               <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Modify</button></router-link>
               <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
+              <router-link v-bind:to="'/aionGRPlaravel/public/blog/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Blog</button></router-link>
             </div>
           </div>
         </div>
@@ -87,18 +87,14 @@ export default {
   flex-direction: column;
   border: 1px solid darkgoldenrod;
   border-radius: 12px;
-  width: 200px;
-  max-width: 200px;
-  height: 400px;
   background: rgba(154,83,254,0.5);
+  max-width: none !important;
+  width: auto !important;
 }
 #bottom{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: auto;
-}
-#bottom a:last-child{
-  margin-top: 10px;
 }
 .btn{
   display: inline-block;

@@ -10,6 +10,7 @@ import AccountFusion from './components/AccountFusion.vue'
 import ModifCharac from './components/ModifCharac.vue'
 import ViewCharac from './components/ViewCharac.vue'
 import GalleryCharac from './components/GalleryCharac.vue'
+import BlogCharac from './components/BlogCharac.vue'
 
 const router = new VueRouter({
     mode: 'history',
@@ -43,6 +44,11 @@ const router = new VueRouter({
             path:'/aionGRPlaravel/public/gallerycharac/:id',
             name: 'gallerycharac',
             component: GalleryCharac,
+        },
+        {
+            path:'/aionGRPlaravel/public/blogcharac/:id',
+            name: 'blogcharac',
+            component: BlogCharac,
         },
     ],
 });
