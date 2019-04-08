@@ -1974,7 +1974,8 @@ __webpack_require__.r(__webpack_exports__);
       nameImg: "",
       filee: "",
       showPreview: false,
-      imagePreview: ''
+      imagePreview: '',
+      name: ''
     };
   },
   methods: {
@@ -2017,11 +2018,13 @@ __webpack_require__.r(__webpack_exports__);
           'content-type': 'multipart/form-data'
         }
       };
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('http://localhost/aionGRP/api.php?w=blog&v=imgsend&id=' + "&name=" + name + "&api=" + self.api + self.$route.params.id, formData, config).then(function (response) {
+      var url = 'http://localhost/aionGRP/api.php?w=blog&v=imgsend&name=' + name + "&api=" + self.api + '&id=' + self.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, formData, config).then(function (response) {
         console.log('marche' + response.data.success);
         alert('image uploaded');
       }).catch(function (error) {
         console.log('erreur' + error);
+        console.log(url);
       });
     },
     show: function show() {
@@ -2304,7 +2307,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.image {\n    width: 100%;\n}\n.gallery {\n    margin-bottom: 30px;\n}\n", ""]);
+exports.push([module.i, "\n.image {\r\n    width: 100%;\n}\n.gallery {\r\n    margin-bottom: 30px;\n}\r\n", ""]);
 
 // exports
 
@@ -2342,7 +2345,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 200px;\n  max-width: 200px;\n  height: 400px;\n  background: rgba(154,83,254,0.5);\n}\n#bottom{\n  display: flex;\n  flex-direction: column;\n  margin-top: auto;\n}\n#bottom a:last-child{\n  margin-top: 10px;\n}\n.btn{\n  display: inline-block;\n  background-color: rgba(154,83,254,1);\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.card-container{\r\n    padding:10px;\n}\n.card-body{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  width: 200px;\r\n  max-width: 200px;\r\n  height: 400px;\r\n  background: rgba(154,83,254,0.5);\n}\n#bottom{\r\n  display: flex;\r\n  flex-direction: column;\r\n  margin-top: auto;\n}\n#bottom a:last-child{\r\n  margin-top: 10px;\n}\n.btn{\r\n  display: inline-block;\r\n  background-color: rgba(154,83,254,1);\n}\nh2{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\n  margin:5px 0;\n}\np{\r\n  width:100%;\r\n  color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -2380,7 +2383,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card{\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 400px;\n  background: rgba(154,83,254,0.5);\n}\n\n", ""]);
+exports.push([module.i, "\n.card{\r\n  padding: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  width: 400px;\r\n  background: rgba(154,83,254,0.5);\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -29446,15 +29449,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***************************************************!*\
   !*** ./resources/js/components/GalleryCharac.vue ***!
   \***************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GalleryCharac_vue_vue_type_template_id_916352e2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GalleryCharac.vue?vue&type=template&id=916352e2& */ "./resources/js/components/GalleryCharac.vue?vue&type=template&id=916352e2&");
 /* harmony import */ var _GalleryCharac_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GalleryCharac.vue?vue&type=script&lang=js& */ "./resources/js/components/GalleryCharac.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _GalleryCharac_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _GalleryCharac_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _GalleryCharac_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GalleryCharac.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/GalleryCharac.vue?vue&type=style&index=0&lang=css&");
+/* empty/unused harmony star reexport *//* harmony import */ var _GalleryCharac_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GalleryCharac.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/GalleryCharac.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -29486,7 +29488,7 @@ component.options.__file = "resources/js/components/GalleryCharac.vue"
 /*!****************************************************************************!*\
   !*** ./resources/js/components/GalleryCharac.vue?vue&type=script&lang=js& ***!
   \****************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29896,8 +29898,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

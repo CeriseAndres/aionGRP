@@ -41,13 +41,13 @@ export default {
       nameImg:"",
       filee:"",
       showPreview: false,
-      imagePreview: ''
+      imagePreview: '',
+      name:'',
     }
   },
   methods: {
       modify: function() {
         var self=this;
-
         var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
@@ -77,14 +77,16 @@ export default {
          const config = {
            headers: { 'content-type': 'multipart/form-data' }
          }
-
-         axios.post('http://localhost/aionGRP/api.php?w=blog&v=imgsend&id='+"&name="+name+"&api="+self.api+self.$route.params.id, formData, config)
+          let url='http://localhost/aionGRP/api.php?w=blog&v=imgsend&name='+name+"&api="+self.api+'&id='+self.$route.params.id;
+         axios.post(url, formData, config)
          .then(function (response) {
                console.log('marche'+response.data.success);
                alert('image uploaded');
              })
             .catch(function (error) {
                    console.log('erreur'+error);
+                   console.log(url);
+
                  });
 
       },
