@@ -2,14 +2,15 @@
   <div class="container">
       <div class="card-group ">
         <div class="card-container text-center col-md-6" v-for="perso in tab">
-          <!-- <img src="..." class="card-img-top" alt="..."> -->
+
           <div class="card-body ">
             <h2 class="card-title">{{perso.name}}</h2>
+            <img src="/aionGRP/images/1554450961hiver.jpg" class="imgCharac mx-auto rounded d-block">
             <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
-            <div id="bottom">
-              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Modify</button></router-link>
+            <div class="buttons">
+              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Edit</button></router-link>
               <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
               <router-link v-bind:to="'/aionGRPlaravel/public/blog/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Blog</button></router-link>
             </div>
@@ -90,11 +91,19 @@ export default {
   background: rgba(154,83,254,0.5);
   max-width: none !important;
   width: auto !important;
+  height: 500px !important;
 }
-#bottom{
+.imgCharac{
+  margin-bottom: 20px;
+  max-width: 150px !important;
+}
+.buttons>a{
+  width: 80px;
+}
+.buttons{
   display: flex;
-  flex-direction: row;
   margin-top: auto;
+  justify-content: space-between;
 }
 .btn{
   display: inline-block;

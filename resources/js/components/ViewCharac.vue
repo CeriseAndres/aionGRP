@@ -1,18 +1,34 @@
 <template>
   <div class="container">
-    <div class="card text-center justify-content-center">
+    <div class="card">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="avatar">
+            <h1>{{tab.name}}</h1>
+            <img src="/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg" class="imgCharac img-thumbnail rounded mx-auto d-block">
+          </div>
+          <div class="traits card text-center justify-content-center">
+              <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block btngallery">Gallery</button></router-link>
+              <p class="card-text text-left"><strong>GENDER:</strong> {{tab.gender}}</p>
+              <p class="card-text text-left"><strong>RACE:</strong> {{tab.race}}</p>
+              <p class="card-text text-left"><strong>CLASS:</strong> {{tab.player_class}}</p>
+              <p class="card-text text-left"><strong>HOUSE:</strong> {{tab.house}}</p>
+          </div>
+        </div>
 
-        <!-- <img src="..." class="card-img-top" alt="..."> -->
-
-          <h1 class="card-text">{{tab.name}}</h1>
-          <p class="card-text text-left"><strong>GENDER:</strong> {{tab.gender}}</p>
-          <p class="card-text text-left"><strong>RACE:</strong> {{tab.race}}</p>
-          <p class="card-text text-left"><strong>CLASS:</strong> {{tab.player_class}}</p>
-          <p class="card-text text-left"><strong>HOUSE:</strong> {{tab.house}}</p>
-          <p class="card-text"><strong>DESCRIPTION:</strong></p>
-          <p class="card-text">{{ tab.description}}</p>
-          <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Gallery</button></router-link>
-
+        <div class="col-sm-6">
+          <div class="blog" style="width: 300px; height: 300px; background-color: black;">
+          </div>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="description">
+                  <p><strong>DESCRIPTION:</strong></p>
+                  <p>{{ tab.description}}</p>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -55,11 +71,31 @@ export default {
 </script>
 
 <style>
+.traits {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.imgCharac{
+  max-height: 266px
+}
+.traits>a {
+  z-index: 1;
+  position: absolute;
+  top: 5px;
+  right: 105px;
+}
+.btngallery {
+  position : absolute;
+  z-index : 2;
+  width: 100px;
+  background: rgba(154,83,254,0.5);
+}
 .card{
+  display: flex;
   padding: 20px;
   border: 1px solid darkgoldenrod;
   border-radius: 12px;
-  width: 400px;
   background: rgba(154,83,254,0.5);
 }
 
