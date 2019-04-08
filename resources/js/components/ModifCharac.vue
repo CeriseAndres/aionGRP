@@ -9,7 +9,7 @@
             <input type="file" class="form-control" id="file" v-on:change="onImageChange" name="file" required />
             <input type="submit" name="submit"  class="btn submitBtn" value="SAVE"/><br>
         </div>
-        <img class="img-thumbnail rounded mx-auto d-block" v-bind:src="imagePreview" v-show="showPreview"/>
+        <img class="img-thumbnail rounded mx-auto d-block" v-if="image" v-bind:src="imagePreview" v-show="showPreview"/>
       </div>
     </form>
 
@@ -82,6 +82,7 @@ export default {
          .then(function (response) {
                console.log('marche'+response.data.success);
                alert('image uploaded');
+               self.emptyImage();
              })
             .catch(function (error) {
                    console.log('erreur'+error);
@@ -116,10 +117,9 @@ export default {
         }.bind(self), false);
         reader.readAsDataURL( self.image );
       },
-      emptyImage: function(e){
+      emptyImage: function(){
         var self=this;
-        console.log(e.target.files[""]);
-        self.image = e.target.files[""];
+        self.image = "";
         let reader  = new FileReader();
         reader.addEventListener("load", function () {
           self.showPreview = false;
