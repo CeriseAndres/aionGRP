@@ -2048,6 +2048,17 @@ __webpack_require__.r(__webpack_exports__);
         self.imagePreview = reader.result;
       }.bind(self), false);
       reader.readAsDataURL(self.image);
+    },
+    emptyImage: function emptyImage(e) {
+      var self = this;
+      console.log(e.target.files[""]);
+      self.image = e.target.files[""];
+      var reader = new FileReader();
+      reader.addEventListener("load", function () {
+        self.showPreview = false;
+        self.imagePreview = reader.result;
+      }.bind(self), false);
+      reader.readAsDataURL(self.image);
     }
   },
   mounted: function mounted() {

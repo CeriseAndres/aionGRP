@@ -114,6 +114,17 @@ export default {
         }.bind(self), false);
         reader.readAsDataURL( self.image );
       },
+      emptyImage: function(e){
+        var self=this;
+        console.log(e.target.files[""]);
+        self.image = e.target.files[""];
+        let reader  = new FileReader();
+        reader.addEventListener("load", function () {
+          self.showPreview = false;
+          self.imagePreview = reader.result;
+        }.bind(self), false);
+        reader.readAsDataURL( self.image );
+      }
     },
    mounted() {
      this.show()
