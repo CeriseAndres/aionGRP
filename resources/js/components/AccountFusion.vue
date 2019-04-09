@@ -37,6 +37,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
 import $ from 'jquery';
 export default {
     name: 'AccountFusion',
@@ -80,17 +81,14 @@ export default {
                 var url= burl+"api.php?w=account&name="+name+"&api="+self.api;
                 var arr={user: self.aionname,password: self.aionpass};
                 console.log(arr);
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    data: JSON.stringify(arr),
-                    contentType: 'application/json;',
-                    dataType: 'json',
-                    async: true,
-                    success: function(msg) {
 
-                    }
-                });
+                axios.post(url, arr)
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
                 console.log('ok');
                 self.takeList();
             })
