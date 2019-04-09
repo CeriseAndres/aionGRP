@@ -1819,15 +1819,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     takeList: function takeList() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeAcc";
+        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeAcc";
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
           self.tab = data;
 
           for (var i = 0; i < self.tab.length; i++) {
-            var url = "http://localhost/aionGRP/api.php?w=getAcc&name=" + name + "&api=" + self.api + "&id=" + self.tab[i][0];
+            var url = burl + "api.php?w=getAcc&name=" + name + "&api=" + self.api + "&id=" + self.tab[i][0];
             console.log(url);
             jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
               self.players.push(data);
@@ -1841,9 +1841,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     link: function link() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        var url = "http://localhost/aionGRP/api.php?w=account&name=" + name + "&api=" + self.api;
+        var url = burl + "api.php?w=account&name=" + name + "&api=" + self.api;
         var arr = {
           user: self.aionname,
           password: self.aionpass
@@ -1928,13 +1928,13 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     selectTen: function selectTen() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=blog&v=selectTen&name=" + name + "&api=" + self.api + "&off=0&idchar=" + self.$route.params.id;
+        var url = burl + "api.php?w=blog&v=selectTen&name=" + name + "&api=" + self.api + "&off=0&idchar=" + self.$route.params.id;
         axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
           self.tab = response.data;
-          console.log(self.tab);
+          console.log(url);
         }).catch(function (error) {
           console.log('erreur' + error);
           console.log(url);
@@ -1944,6 +1944,67 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.selectTen();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BlogPost.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BlogPost.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'BlogCharac',
+  data: function data() {
+    return {
+      tab: [],
+      api: "",
+      title: "",
+      content: ""
+    };
+  },
+  methods: {
+    addpost: function addpost() {
+      var self = this;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
+        self.api = data;
+        var url = burl + "api.php?w=blog&v=addBlog&name=" + name + "&api=" + self.api + '&id=' + self.$route.params.id;
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+          self.tab = response.data;
+          console.log(url);
+        }).catch(function (error) {
+          console.log('erreur' + error);
+          console.log(url);
+        });
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.addpost();
   }
 });
 
@@ -2009,10 +2070,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     imgtakeall: function imgtakeall() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_2___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=blog&v=imgtakeall&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id;
+        var url = burl + "api.php?w=blog&v=imgtakeall&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id;
         axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
           self.tab = response.data;
           console.log(self.tab);
@@ -2039,10 +2100,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     changeAvatar: function changeAvatar(idimg) {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_2___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=blog&v=makedef&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id + '&id=' + idimg;
+        var url = burl + "api.php?w=blog&v=makedef&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id + '&id=' + idimg;
         axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
           console.log(response);
           alert('done');
@@ -2122,10 +2183,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     modify: function modify() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=modify";
+        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=modify";
         var arr = {
           description: self.description,
           house: self.house,
@@ -2159,7 +2220,7 @@ __webpack_require__.r(__webpack_exports__);
           'content-type': 'multipart/form-data'
         }
       };
-      var url = 'http://localhost/aionGRP/api.php?w=blog&v=imgsend&name=' + name + "&api=" + self.api + '&id=' + self.$route.params.id;
+      var url = burl + "api.php?w=blog&v=imgsend&name=" + name + "&api=" + self.api + '&id=' + self.$route.params.id;
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, formData, config).then(function (response) {
         console.log('marche' + response.data.success);
         alert('image uploaded');
@@ -2171,10 +2232,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     show: function show() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
+        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
           self.tab = data;
           self.house = self.tab.house;
@@ -2262,10 +2323,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     takeTen: function takeTen() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeMy&off=0";
+        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeMy&off=0";
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
           self.tab = data;
         });
@@ -2359,10 +2420,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     search: function search() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=search&type=name&clef=" + self.clef;
+        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=search&type=name&clef=" + self.clef;
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
           self.tab = data;
           console.log(data);
@@ -2449,10 +2510,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     takeOne: function takeOne() {
       var self = this;
-      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = "http://localhost/aionGRP/api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
+        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
         jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
           self.tab = data;
           console.log(data);
@@ -6927,7 +6988,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\np{\r\n    color:white;\n}\n.fusion{\r\n        display: inline-flex;\n}\n.fusion>ul{\r\n        display: inline-flex;\r\n        list-style-type: none;\n}\n.form-control{\r\n        width: auto !important;\n}\n#inputfusion{\r\n        height: 100px;\r\n        margin: auto;\r\n        margin-top:3.8em;\n}\r\n", ""]);
+exports.push([module.i, "\np{\n    color:white;\n}\n.fusion{\n        display: inline-flex;\n}\n.fusion>ul{\n        display: inline-flex;\n        list-style-type: none;\n}\n.form-control{\n        width: auto !important;\n}\n#inputfusion{\n        height: 100px;\n        margin: auto;\n        margin-top:3.8em;\n}\n", ""]);
 
 // exports
 
@@ -6946,7 +7007,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.images {\r\n  max-width: 200px;\r\n  max-height: 300px;\n}\n.gallery {\r\n    margin-bottom: 30px;\r\n    display: flex;\r\n    margin-top: auto;\r\n    justify-content: space-between;\n}\n.content>a {\r\n\t\tmargin:  auto;\r\n\t\tborder: none;\r\n\t\tpadding: 10px;\r\n\t\tcursor: pointer;\n}\n#filtre{\r\n  position:absolute;\r\n  width:179%;\r\n  left: -110px;\r\n  top: -110px;\r\n  background-color:black;\r\n  z-index:1;\r\n  min-height: 300%;\n}\n.imgModal{\r\n  position: relative;\r\n  max-width: 900px;\r\n  cursor: pointer;\r\n  z-index:2;\r\n  display: block;\r\n  margin: auto;\r\n  margin-top: 5em;\r\n  margin-bottom: 5em;\n}\n.makedefault{\r\n  position : relative;\r\n  display: block;\r\n  margin: 0 auto !important;\r\n  padding: 0 !important;\r\n  background: rgba(154,83,254,0.5);\r\n  width: 200px;\r\n  margin-top: 5px !important;\r\n  font-size: 15px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\r\n    transition: opacity .5s;\n}\r\n", ""]);
+exports.push([module.i, "\n.images {\n  max-width: 200px;\n  max-height: 300px;\n}\n.gallery {\n    margin-bottom: 30px;\n    display: flex;\n    margin-top: auto;\n    justify-content: space-between;\n}\n.content>a {\n\t\tmargin:  auto;\n\t\tborder: none;\n\t\tpadding: 10px;\n\t\tcursor: pointer;\n}\n#filtre{\n  position:absolute;\n  width:179%;\n  left: -110px;\n  top: -110px;\n  background-color:black;\n  z-index:1;\n  min-height: 300%;\n}\n.imgModal{\n  position: relative;\n  max-width: 900px;\n  cursor: pointer;\n  z-index:2;\n  display: block;\n  margin: auto;\n  margin-top: 5em;\n  margin-bottom: 5em;\n}\n.makedefault{\n  position : relative;\n  display: block;\n  margin: 0 auto !important;\n  padding: 0 !important;\n  background: rgba(154,83,254,0.5);\n  width: 200px;\n  margin-top: 5px !important;\n  font-size: 15px !important;\n}\n.fade-enter-active, .fade-leave-active {\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\n    transition: opacity .5s;\n}\n", ""]);
 
 // exports
 
@@ -6984,7 +7045,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\r\n    padding:10px;\n}\n.card-body{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\r\n  max-width: none !important;\r\n  width: auto !important;\r\n  height: 500px !important;\n}\n.btnchange {\r\n  position : relative;\r\n  z-index : 2;\r\n  width: 50px;\r\n  background: rgba(154,83,254,0.5) !important;\r\n  font-size: 12px;\r\n  padding: 0;\r\n  top: -44px;\n}\n.imgCharac{\r\n  margin-bottom: 20px;\r\n  max-width: 150px !important;\n}\n.buttons>a{\r\n  width: 80px;\n}\n.buttons{\r\n  display: flex;\r\n  margin-top: auto;\r\n  justify-content: space-between;\n}\nh2{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\n  margin:5px 0;\n}\np{\r\n  width:100%;\r\n  color: black;\n}\r\n", ""]);
+exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
 
 // exports
 
@@ -7022,7 +7083,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.traits {\r\n  position: relative;\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\n}\n.imgCharac{\r\n  max-height: 266px\n}\n.traits>a {\r\n  z-index: 1;\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 105px;\n}\n.btngallery {\r\n  position : relative;\r\n  z-index : 2;\r\n  width: 100px;\r\n  left: 100px;\r\n  background: rgba(154,83,254,0.5);\n}\n.card{\r\n  display: flex;\r\n  padding: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.traits {\n  position: relative;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.imgCharac{\n  max-height: 266px\n}\n.traits>a {\n  z-index: 1;\n  position: absolute;\n  top: 5px;\n  right: 105px;\n}\n.btngallery {\n  position : relative;\n  z-index : 2;\n  width: 100px;\n  left: 100px;\n  background: rgba(154,83,254,0.5);\n}\n.card{\n  display: flex;\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n\n", ""]);
 
 // exports
 
@@ -21469,6 +21530,33 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c(
       "div",
+      { staticClass: "buttonadd" },
+      [
+        _c(
+          "router-link",
+          {
+            staticStyle: { color: "#ffffff" },
+            attrs: {
+              to: "/aionGRPlaravel/public/blogpost/" + _vm.$route.params.id
+            }
+          },
+          [
+            _c(
+              "button",
+              {
+                staticClass: "addpost btn btn-block",
+                attrs: { type: "button" }
+              },
+              [_vm._v("Add post")]
+            )
+          ]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
       { staticClass: "accordion", attrs: { id: "allposts" } },
       _vm._l(_vm.tab, function(post) {
         return _c("div", { staticClass: "card" }, [
@@ -21523,6 +21611,89 @@ var render = function() {
       }),
       0
     )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BlogPost.vue?vue&type=template&id=bdf3a066&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BlogPost.vue?vue&type=template&id=bdf3a066& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("form", [
+    _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "formInput" } }, [_vm._v("TITLE")]),
+      _vm._v(" "),
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.title,
+            expression: "title"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { type: "text", name: "title" },
+        domProps: { value: _vm.title },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.title = $event.target.value
+          }
+        }
+      }),
+      _c("br"),
+      _vm._v(" "),
+      _c("label", { attrs: { for: "formControlTextarea" } }, [
+        _vm._v("CONTENT")
+      ]),
+      _vm._v(" "),
+      _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.content,
+            expression: "content"
+          }
+        ],
+        staticClass: "form-control",
+        attrs: { name: "content", rows: "3" },
+        domProps: { value: _vm.content },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.content = $event.target.value
+          }
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "a",
+        { staticClass: "btn btn-lg btn-block", on: { click: _vm.addpost } },
+        [_vm._v("accept")]
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -37216,22 +37387,26 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************************!*\
   !*** ./resources/js/components/BlogPost.vue ***!
   \**********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _BlogPost_vue_vue_type_template_id_bdf3a066___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BlogPost.vue?vue&type=template&id=bdf3a066& */ "./resources/js/components/BlogPost.vue?vue&type=template&id=bdf3a066&");
+/* harmony import */ var _BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BlogPost.vue?vue&type=script&lang=js& */ "./resources/js/components/BlogPost.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _BlogPost_vue_vue_type_template_id_bdf3a066___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _BlogPost_vue_vue_type_template_id_bdf3a066___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -37239,8 +37414,42 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/components/BlogPost.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/BlogPost.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/BlogPost.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./BlogPost.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BlogPost.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/BlogPost.vue?vue&type=template&id=bdf3a066&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/BlogPost.vue?vue&type=template&id=bdf3a066& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_template_id_bdf3a066___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./BlogPost.vue?vue&type=template&id=bdf3a066& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BlogPost.vue?vue&type=template&id=bdf3a066&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_template_id_bdf3a066___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogPost_vue_vue_type_template_id_bdf3a066___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -37697,8 +37906,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

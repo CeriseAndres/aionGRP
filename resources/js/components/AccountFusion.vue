@@ -53,14 +53,14 @@ export default {
     methods: {
         takeList: function () {
             var self=this;
-            var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+            var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
             $.getJSON(urlapi, function (data) {
                 self.api=data;
-                var url="http://localhost/aionGRP/api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeAcc";
+                var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeAcc";
                 $.getJSON(url, function (data) {
                     self.tab=data;
                     for (var i=0; i<self.tab.length;i++){
-                     var url="http://localhost/aionGRP/api.php?w=getAcc&name="+name+"&api="+self.api+"&id="+self.tab[i][0];
+                     var url= burl+"api.php?w=getAcc&name="+name+"&api="+self.api+"&id="+self.tab[i][0];
                      console.log(url);
                      $.getJSON(url, function (data) {
                          self.players.push(data);
@@ -75,9 +75,9 @@ export default {
         },
         link: function () {
             var self=this;
-            var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+            var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
             $.getJSON(urlapi, function (data) {
-                var url="http://localhost/aionGRP/api.php?w=account&name="+name+"&api="+self.api;
+                var url= burl+"api.php?w=account&name="+name+"&api="+self.api;
                 var arr={user: self.aionname,password: self.aionpass};
                 console.log(arr);
                 $.ajax({

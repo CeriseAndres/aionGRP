@@ -48,10 +48,10 @@ export default {
   methods: {
       modify: function() {
         var self=this;
-        var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url="http://localhost/aionGRP/api.php?w=personnage&name="+name+"&api="+self.api+"&v=modify";
+          var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=modify";
           var arr ={description: self.description, house: self.house, id:self.$route.params.id};
           $.ajax({
               url: url,
@@ -77,7 +77,7 @@ export default {
          const config = {
            headers: { 'content-type': 'multipart/form-data' }
          }
-          let url='http://localhost/aionGRP/api.php?w=blog&v=imgsend&name='+name+"&api="+self.api+'&id='+self.$route.params.id;
+          let url=burl+"api.php?w=blog&v=imgsend&name="+name+"&api="+self.api+'&id='+self.$route.params.id;
          axios.post(url, formData, config)
          .then(function (response) {
                console.log('marche'+response.data.success);
@@ -93,10 +93,10 @@ export default {
       },
       show: function(){
         var self=this;
-        var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url="http://localhost/aionGRP/api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeOne&id="+self.$route.params.id;
+          var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeOne&id="+self.$route.params.id;
           $.getJSON(url, function (data) {
               self.tab=data;
               self.house=self.tab.house;

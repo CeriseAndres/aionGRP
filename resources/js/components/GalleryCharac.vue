@@ -43,10 +43,10 @@ export default {
   methods: {
     imgtakeall: function() {
         var self=this;
-        var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url="http://localhost/aionGRP/api.php?w=blog&v=imgtakeall&name="+name+"&api="+self.api+'&idchar='+self.$route.params.id;
+          var url= burl+"api.php?w=blog&v=imgtakeall&name="+name+"&api="+self.api+'&idchar='+self.$route.params.id;
           axios.get(url)
           .then(function (response) {
             self.tab=response.data;
@@ -76,10 +76,10 @@ export default {
    		},
       changeAvatar: function(idimg) {
         var self=this;
-        var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url="http://localhost/aionGRP/api.php?w=blog&v=makedef&name="+name+"&api="+self.api+'&idchar='+self.$route.params.id+'&id='+idimg;
+          var url= burl+"api.php?w=blog&v=makedef&name="+name+"&api="+self.api+'&idchar='+self.$route.params.id+'&id='+idimg;
           axios.get(url)
           .then(function (response) {
                 console.log(response);

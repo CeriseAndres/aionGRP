@@ -39,10 +39,10 @@ export default {
   methods: {
       takeTen: function() {
         var self=this;
-        var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url="http://localhost/aionGRP/api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeMy&off=0";
+          var url=burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeMy&off=0";
           $.getJSON(url, function (data) {
               self.tab=data;
 

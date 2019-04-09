@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <!-- <div class="buttonadd">
-      <router-link v-bind:to="'/aionGRPlaravel/public/blogpost/'+post.character_id" style="color: #ffffff"><button type="button" class="addpost btn btn-block">Add post</button></router-link>
-    </div> -->
+    <div class="buttonadd">
+      <router-link v-bind:to="'/aionGRPlaravel/public/blogpost/'+$route.params.id" style="color: #ffffff"><button type="button" class="addpost btn btn-block">Add post</button></router-link>
+    </div>
     <div class="accordion" id="allposts" >
       <div class="card" v-for="post in tab">
 
@@ -40,14 +40,15 @@ export default {
   methods: {
       selectTen: function() {
         var self=this;
-        var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
+        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url="http://localhost/aionGRP/api.php?w=blog&v=selectTen&name="+name+"&api="+self.api+"&off=0&idchar="+self.$route.params.id;
+          var url= burl+"api.php?w=blog&v=selectTen&name="+name+"&api="+self.api+"&off=0&idchar="+self.$route.params.id;
           axios.get(url)
           .then(function (response) {
             self.tab=response.data;
-                console.log(self.tab);
+                console.log(url);
+
               })
              .catch(function (error) {
                     console.log('erreur'+error);
