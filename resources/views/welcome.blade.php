@@ -71,9 +71,9 @@ console.log(ert.length);
             <h3>Character Sheet</h3>
           <nav class="navapp">
               <ul>
-                  <li> <router-link to="/aionGRPlaravel/public/mycharacters">My Characters</router-link></li>
-                  <li>  <router-link to="/aionGRPlaravel/public/searchcharacters">Search Characters</router-link></li>
-                  <li> <router-link to="/aionGRPlaravel/public/accountfusion">Account Fusion</router-link></li>
+                  <li> <router-link to="/aionGRP/mycharacters">My Characters</router-link></li>
+                  <li>  <router-link to="/aionGRP/searchcharacters">Search Characters</router-link></li>
+                  <li> <router-link to="/aionGRP/accountfusion">Account Fusion</router-link></li>
               </ul>
           </nav>
           <router-view></router-view>
