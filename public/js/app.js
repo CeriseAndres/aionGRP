@@ -1982,8 +1982,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       tab: [],
       api: "",
-      title: "",
-      content: ""
+      title: null,
+      content: null
     };
   },
   methods: {
@@ -1992,19 +1992,17 @@ __webpack_require__.r(__webpack_exports__);
       var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
         self.api = data;
-        var url = burl + "api.php?w=blog&v=addBlog&name=" + name + "&api=" + self.api + '&id=' + self.$route.params.id;
-        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-          self.tab = response.data;
-          console.log(url);
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("burl+'api.php?w=blog&v=addBlog&name='+name+'&api='+self.api+'&id='+self.$route.params.id", {
+          title: self.title,
+          content: self.content
+        }).then(function (response) {
+          console.log('marche' + response.data.success);
+          alert('posted');
         }).catch(function (error) {
           console.log('erreur' + error);
-          console.log(url);
         });
       });
     }
-  },
-  mounted: function mounted() {
-    this.addpost();
   }
 });
 

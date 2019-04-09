@@ -19,34 +19,34 @@ export default {
     return {
       tab:[],
       api:"",
-      title:"",
-      content:""
+      title: null,
+      content: null
+
     }
   },
+
   methods: {
-      addpost: function() {
+      addpost (){
         var self=this;
         var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
         $.getJSON(urlapi, function(data){
           self.api=data;
-          var url= burl+"api.php?w=blog&v=addBlog&name="+name+"&api="+self.api+'&id='+self.$route.params.id;
-          axios.get(url)
-          .then(function (response) {
-            self.tab=response.data;
-                console.log(url);
+          axios.post("burl+'api.php?w=blog&v=addBlog&name='+name+'&api='+self.api+'&id='+self.$route.params.id", {
+            title: self.title,
+            content: self.content
+          })
+          .then((response) => {
+            console.log('marche'+response.data.success);
+            alert('posted');
+          })
+          .catch(function (error) {
+                 console.log('erreur'+error);
 
-              })
-             .catch(function (error) {
-                    console.log('erreur'+error);
-                    console.log(url);
-
-                  });
+               });
         });
-      }
-    },
-   mounted() {
-     this.addpost();
+      },
 
-   },
+   }
+
 }
 </script>
