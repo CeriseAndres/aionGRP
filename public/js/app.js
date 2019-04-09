@@ -2327,6 +2327,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'SearchCharacters',
@@ -6984,7 +6996,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\n  padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 200px;\n  max-width: 200px;\n  height: 400px;\n  background: rgba(154,83,254,0.5);\n}\n#bottom{\n}\n#bottom a:last-child{\n}\n.btn{\n  display: inline-block;\n  background-color: rgba(154,83,254,1);\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.card-container{\n  padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 200px;\n  max-width: 200px;\n  height: 400px;\n  background: rgba(154,83,254,0.5);\n}\n#bottom{\n}\n#bottom a:last-child{\n}\n.btn{\n  display: inline-block;\n  background-color: rgba(154,83,254,1);\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n#inputsearch{\n  height: 40px !important;\n  margin-left: 0.5em;\n}\n", ""]);
 
 // exports
 
@@ -21979,28 +21991,47 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("input", {
-      directives: [
-        {
-          name: "model",
-          rawName: "v-model",
-          value: _vm.clef,
-          expression: "clef"
-        }
-      ],
-      attrs: { type: "text" },
-      domProps: { value: _vm.clef },
-      on: {
-        input: function($event) {
-          if ($event.target.composing) {
-            return
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "input-group mb-3" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.clef,
+              expression: "clef"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: {
+            type: "text",
+            id: "basic-url1",
+            "aria-describedby": "basic-addon"
+          },
+          domProps: { value: _vm.clef },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.clef = $event.target.value
+            }
           }
-          _vm.clef = $event.target.value
-        }
-      }
-    }),
-    _vm._v(" "),
-    _c("input", { attrs: { type: "submit" }, on: { click: _vm.search } }),
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn",
+            attrs: { type: "button", id: "inputsearch" },
+            on: { click: _vm.search }
+          },
+          [_vm._v("Login")]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -22010,6 +22041,25 @@ var render = function() {
           _c("div", { staticClass: "card-body" }, [
             _c("h2", { staticClass: "card-title" }, [
               _vm._v(_vm._s(perso.name))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "avatar" }, [
+              perso.imgdef == -1
+                ? _c("img", {
+                    staticClass: "imgCharac mx-auto rounded d-block",
+                    attrs: {
+                      src:
+                        "/aionGRP/images/1554710433aurene-head-emoji_orig.png"
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              perso.imgdef != -1
+                ? _c("img", {
+                    staticClass: "imgCharac mx-auto rounded d-block",
+                    attrs: { src: "/aionGRP/" + perso.imgdef }
+                  })
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("p", { staticClass: "card-text" }, [
@@ -22063,7 +22113,20 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c(
+        "span",
+        { staticClass: "input-group-text", attrs: { id: "basic-addon" } },
+        [_vm._v("Search")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 

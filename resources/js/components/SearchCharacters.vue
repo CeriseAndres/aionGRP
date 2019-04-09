@@ -1,13 +1,25 @@
 <template>
   <div class="container">
-    <input type="text" v-model="clef">
-    <input type="submit" v-on:click="search">
+    <div class="row">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon">Search</span>
+      </div>
+      <input type="text" v-model="clef" class="form-control" id="basic-url1" aria-describedby="basic-addon">
+      <button type="button" id="inputsearch" class="btn" v-on:click="search">Login</button>
+    </div>
+    </div>
+
 
     <div class="card-group">
       <div class="card-container text-center" v-for="perso in tab">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h2 class="card-title">{{perso.name}}</h2>
+          <div class="avatar">
+            <img src="/aionGRP/images/1554710433aurene-head-emoji_orig.png" v-if="perso.imgdef==-1" class="imgCharac mx-auto rounded d-block">
+            <img v-bind:src="'/aionGRP/'+perso.imgdef" v-if="perso.imgdef!=-1" class="imgCharac mx-auto rounded d-block">
+             </div>
           <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
           <p class="card-text">{{perso.player_class}}</p>
           <p class="card-text">{{perso.house}}</p>
@@ -101,5 +113,9 @@ export default {
     width:100%;
     color: black;
 
+  }
+  #inputsearch{
+    height: 40px !important;
+    margin-left: 0.5em;
   }
 </style>
