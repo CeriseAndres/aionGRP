@@ -62,7 +62,7 @@ export default {
               async: true,
               success: function(msg) {
                 console.log('ok');
-                alert('change accepted')
+                alert('change accepted');
               }
           });
           self.$router.push({name: 'mycharacters'});

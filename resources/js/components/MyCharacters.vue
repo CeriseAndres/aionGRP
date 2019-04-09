@@ -6,7 +6,8 @@
           <div class="card-body ">
             <h2 class="card-title">{{perso.name}}</h2>
             <div class="avatar">
-              <img src="/aionGRP/images/1554450961hiver.jpg" class="imgCharac mx-auto rounded d-block">
+              <img src="/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg" v-if="perso.imgdef==-1" class="imgCharac mx-auto rounded d-block">
+              <img v-bind:src="'/aionGRP/'+perso.imgdef" v-if="perso.imgdef!=-1" class="imgCharac mx-auto rounded d-block">
               <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block btnchange">Change</button></router-link>
             </div>
             <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
@@ -115,15 +116,6 @@ export default {
   display: flex;
   margin-top: auto;
   justify-content: space-between;
-}
-.btngallery {
-  position : relative;
-  z-index : 2;
-  width: 50px !important;
-  background: rgba(154,83,254,0.5);
-  font-size: 10px !important;
-  padding: 0 !important;
-  top: -43px;
 }
 h2{
   width:95%;

@@ -11,6 +11,7 @@ import ModifCharac from './components/ModifCharac.vue'
 import ViewCharac from './components/ViewCharac.vue'
 import GalleryCharac from './components/GalleryCharac.vue'
 import BlogCharac from './components/BlogCharac.vue'
+import BlogPost from './components/BlogPost.vue'
 
 const router = new VueRouter({
     mode: 'history',
@@ -49,6 +50,11 @@ const router = new VueRouter({
             path:'/aionGRPlaravel/public/blogcharac/:id',
             name: 'blogcharac',
             component: BlogCharac,
+        },
+        {
+            path:'/aionGRPlaravel/public/blogpost/:id',
+            name: 'blogpost',
+            component: BlogPost,
         },
     ],
 });

@@ -5,7 +5,10 @@
         <div class="col-sm-6">
           <div class="avatar">
             <h1>{{tab.name}}</h1>
-            <img src="/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg" class="imgCharac img-thumbnail rounded mx-auto d-block">
+            <div class="avatar">
+              <img src="/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg" v-if="tab.imgdef==-1" class="imgCharac mx-auto rounded d-block">
+              <img v-bind:src="'/aionGRP/'+tab.imgdef" v-if="tab.imgdef!=-1" class="imgCharac mx-auto rounded d-block">
+            </div>
           </div>
           <div class="traits card text-center justify-content-center">
               <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block btngallery">Gallery</button></router-link>
@@ -86,9 +89,10 @@ export default {
   right: 105px;
 }
 .btngallery {
-  position : absolute;
+  position : relative;
   z-index : 2;
   width: 100px;
+  left: 100px;
   background: rgba(154,83,254,0.5);
 }
 .card{

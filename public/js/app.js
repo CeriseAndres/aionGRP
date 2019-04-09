@@ -1874,10 +1874,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'blogCharac'
+  name: 'blogCharac',
+  data: function data() {
+    return {
+      tab: [],
+      api: ""
+    };
+  },
+  methods: {
+    selectTen: function selectTen() {
+      var self = this;
+      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
+        self.api = data;
+        var url = "http://localhost/aionGRP/api.php?w=blog&v=selectTen&name=" + name + "&api=" + self.api + "&off=0";
+        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
+          self.tab = data;
+        });
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.selectTen();
+  }
 });
 
 /***/ }),
@@ -1898,6 +1942,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -1964,6 +2013,21 @@ __webpack_require__.r(__webpack_exports__);
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#title').show();
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#filtre').hide();
       }
+    },
+    changeAvatar: function changeAvatar(idimg) {
+      var self = this;
+      var urlapi = "http://localhost/aionGRP/api.php?w=api&name=" + name + "&password=" + password;
+      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.getJSON(urlapi, function (data) {
+        self.api = data;
+        var url = "http://localhost/aionGRP/api.php?w=blog&v=makedef&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id + '&id=' + idimg;
+        axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
+          console.log(response);
+          alert('done');
+        }).catch(function (error) {
+          console.log('erreur' + error);
+          console.log(url);
+        });
+      });
     }
   },
   mounted: function mounted() {
@@ -2161,6 +2225,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'MyCharacters',
@@ -2299,6 +2364,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -6824,7 +6892,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.images {\n  max-width: 200px;\n  max-height: 300px;\n}\n.gallery {\n    margin-bottom: 30px;\n}\n.content>a {\n\t\tmargin:  auto;\n\t\tborder: none;\n\t\tpadding: 10px;\n\t\tcursor: pointer;\n}\n#filtre{\n  position:absolute;\n  width:179%;\n  left: -110px;\n  top: -110px;\n  background-color:black;\n  z-index:1;\n  min-height: 300%;\n}\n.imgModal{\n  position: relative;\n  max-width: 900px;\n  cursor: pointer;\n  z-index:2;\n  display: block;\n  margin: auto;\n  margin-top: 5em;\n  margin-bottom: 5em;\n}\n.fade-enter-active, .fade-leave-active {\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\n    transition: opacity .5s;\n}\n", ""]);
+exports.push([module.i, "\n.images {\n  max-width: 200px;\n  max-height: 300px;\n}\n.gallery {\n    margin-bottom: 30px;\n    display: flex;\n    margin-top: auto;\n    justify-content: space-between;\n}\n.content>a {\n\t\tmargin:  auto;\n\t\tborder: none;\n\t\tpadding: 10px;\n\t\tcursor: pointer;\n}\n#filtre{\n  position:absolute;\n  width:179%;\n  left: -110px;\n  top: -110px;\n  background-color:black;\n  z-index:1;\n  min-height: 300%;\n}\n.imgModal{\n  position: relative;\n  max-width: 900px;\n  cursor: pointer;\n  z-index:2;\n  display: block;\n  margin: auto;\n  margin-top: 5em;\n  margin-bottom: 5em;\n}\n.makedefault{\n  position : relative;\n  display: block;\n  margin: 0 auto !important;\n  padding: 0 !important;\n  background: rgba(154,83,254,0.5);\n  width: 200px;\n  margin-top: 5px !important;\n  font-size: 15px !important;\n}\n.fade-enter-active, .fade-leave-active {\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\n    transition: opacity .5s;\n}\n", ""]);
 
 // exports
 
@@ -6862,7 +6930,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\n.btngallery {\n  position : relative;\n  z-index : 2;\n  width: 50px !important;\n  background: rgba(154,83,254,0.5);\n  font-size: 10px !important;\n  padding: 0 !important;\n  top: -43px;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
 
 // exports
 
@@ -6900,7 +6968,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.traits {\n  position: relative;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.imgCharac{\n  max-height: 266px\n}\n.traits>a {\n  z-index: 1;\n  position: absolute;\n  top: 5px;\n  right: 105px;\n}\n.btngallery {\n  position : absolute;\n  z-index : 2;\n  width: 100px;\n  background: rgba(154,83,254,0.5);\n}\n.card{\n  display: flex;\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n\n", ""]);
+exports.push([module.i, "\n.traits {\n  position: relative;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.imgCharac{\n  max-height: 266px\n}\n.traits>a {\n  z-index: 1;\n  position: absolute;\n  top: 5px;\n  right: 105px;\n}\n.btngallery {\n  position : relative;\n  z-index : 2;\n  width: 100px;\n  left: 100px;\n  background: rgba(154,83,254,0.5);\n}\n.card{\n  display: flex;\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n\n", ""]);
 
 // exports
 
@@ -21256,7 +21324,97 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c(
+        "div",
+        { staticClass: "buttonadd" },
+        [
+          _c(
+            "router-link",
+            {
+              staticStyle: { color: "#ffffff" },
+              attrs: {
+                to: "/aionGRPlaravel/public/blogpost/" + _vm.blog.character_id
+              }
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "addpost btn btn-block",
+                  attrs: { type: "button" }
+                },
+                [_vm._v("Add post")]
+              )
+            ]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.tab, function(blog) {
+        return _c(
+          "div",
+          { staticClass: "accordion", attrs: { id: "allposts" } },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c(
+                "div",
+                { staticClass: "card-header", attrs: { id: "headingOne" } },
+                [
+                  _c("h2", { staticClass: "mb-0" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-link",
+                        attrs: {
+                          type: "button",
+                          "data-toggle": "collapse",
+                          "data-target": "#collapseOne",
+                          "aria-expanded": "true",
+                          "aria-controls": "collapseOne"
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n            " +
+                            _vm._s(blog.title) +
+                            "-" +
+                            _vm._s(blog.date_post) +
+                            "\n          "
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "collapse show",
+                  attrs: {
+                    id: "collapseOne",
+                    "aria-labelledby": "headingOne",
+                    "data-parent": "#allposts"
+                  }
+                },
+                [
+                  _c("div", { staticClass: "card-body" }, [
+                    _vm._v("\n          " + _vm._s(blog.content) + "\n        ")
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -21315,6 +21473,19 @@ var render = function() {
                       attrs: { src: "/aionGRP/" + image.img_path }
                     })
                   ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "makedefault btn btn-lg",
+                    on: {
+                      click: function($event) {
+                        return _vm.changeAvatar(image.id)
+                      }
+                    }
+                  },
+                  [_vm._v("make default")]
                 )
               ])
             ]
@@ -21531,10 +21702,21 @@ var render = function() {
                 "div",
                 { staticClass: "avatar" },
                 [
-                  _c("img", {
-                    staticClass: "imgCharac mx-auto rounded d-block",
-                    attrs: { src: "/aionGRP/images/1554450961hiver.jpg" }
-                  }),
+                  perso.imgdef == -1
+                    ? _c("img", {
+                        staticClass: "imgCharac mx-auto rounded d-block",
+                        attrs: {
+                          src: "/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg"
+                        }
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  perso.imgdef != -1
+                    ? _c("img", {
+                        staticClass: "imgCharac mx-auto rounded d-block",
+                        attrs: { src: "/aionGRP/" + perso.imgdef }
+                      })
+                    : _vm._e(),
                   _vm._v(" "),
                   _c(
                     "router-link",
@@ -21787,10 +21969,23 @@ var render = function() {
           _c("div", { staticClass: "avatar" }, [
             _c("h1", [_vm._v(_vm._s(_vm.tab.name))]),
             _vm._v(" "),
-            _c("img", {
-              staticClass: "imgCharac img-thumbnail rounded mx-auto d-block",
-              attrs: { src: "/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg" }
-            })
+            _c("div", { staticClass: "avatar" }, [
+              _vm.tab.imgdef == -1
+                ? _c("img", {
+                    staticClass: "imgCharac mx-auto rounded d-block",
+                    attrs: {
+                      src: "/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg"
+                    }
+                  })
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.tab.imgdef != -1
+                ? _c("img", {
+                    staticClass: "imgCharac mx-auto rounded d-block",
+                    attrs: { src: "/aionGRP/" + _vm.tab.imgdef }
+                  })
+                : _vm._e()
+            ])
           ]),
           _vm._v(" "),
           _c(
@@ -36642,10 +36837,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ViewCharac_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ViewCharac.vue */ "./resources/js/components/ViewCharac.vue");
 /* harmony import */ var _components_GalleryCharac_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/GalleryCharac.vue */ "./resources/js/components/GalleryCharac.vue");
 /* harmony import */ var _components_BlogCharac_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/BlogCharac.vue */ "./resources/js/components/BlogCharac.vue");
+/* harmony import */ var _components_BlogPost_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/BlogPost.vue */ "./resources/js/components/BlogPost.vue");
 
 
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]);
+
 
 
 
@@ -36683,6 +36880,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
     path: '/aionGRPlaravel/public/blogcharac/:id',
     name: 'blogcharac',
     component: _components_BlogCharac_vue__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }, {
+    path: '/aionGRPlaravel/public/blogpost/:id',
+    name: 'blogpost',
+    component: _components_BlogPost_vue__WEBPACK_IMPORTED_MODULE_10__["default"]
   }]
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
@@ -36828,6 +37029,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_BlogCharac_vue_vue_type_template_id_be4d0836___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/BlogPost.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/BlogPost.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/components/BlogPost.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
