@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="row">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon">Search</span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon">Search</span>
+        </div>
+        <input type="text" v-model="clef" class="form-control" id="basic-url1" aria-describedby="basic-addon">
+        <button type="button" id="inputsearch" class="btn" v-on:click="search">Login</button>
       </div>
-      <input type="text" v-model="clef" class="form-control" id="basic-url1" aria-describedby="basic-addon">
-      <button type="button" id="inputsearch" class="btn" v-on:click="search">Login</button>
-    </div>
     </div>
 
 
@@ -19,7 +19,7 @@
           <div class="avatar">
             <img src="/aionGRP/images/1554710433aurene-head-emoji_orig.png" v-if="perso.imgdef==-1" class="imgCharac mx-auto rounded d-block">
             <img v-bind:src="'/aionGRP/'+perso.imgdef" v-if="perso.imgdef!=-1" class="imgCharac mx-auto rounded d-block">
-             </div>
+          </div>
           <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
           <p class="card-text">{{perso.player_class}}</p>
           <p class="card-text">{{perso.house}}</p>
@@ -34,17 +34,17 @@
 </template>
 
 <script>
-import $ from 'jquery'
-export default {
-  name: 'SearchCharacters',
-  data: function() {
-    return {
-      tab:[],
-      api:"",
-      clef:""
-    }
-  },
-  methods: {
+  import $ from 'jquery'
+  export default {
+    name: 'SearchCharacters',
+    data: function() {
+      return {
+        tab:[],
+        api:"",
+        clef:""
+      }
+    },
+    methods: {
       search: function() {
         var self=this;
         var urlapi= "http://localhost/aionGRP/api.php?w=api&name="+name+"&password="+password;
@@ -52,32 +52,32 @@ export default {
           self.api=data;
           var url="http://localhost/aionGRP/api.php?w=personnage&name="+name+"&api="+self.api+"&v=search&type=name&clef="+self.clef;
           $.getJSON(url, function (data) {
-              self.tab=data;
-              console.log(data);
+            self.tab=data;
+            console.log(data);
           });
         });
       }
     },
-   mounted() {
-   },
-  filters: {
-    providerDescription: function(value) {
-      if (!value) return '';
-      if (value.length < 25) {
+    mounted() {
+    },
+    filters: {
+      providerDescription: function(value) {
+        if (!value) return '';
+        if (value.length < 25) {
 
-        var result = value;
+          var result = value;
+        }
+        else {
+
+          var result = value.substring(0, 25) + ' [...]';
+        }
+
+        return result;
+
       }
-      else {
-
-        var result = value.substring(0, 25) + ' [...]';
-      }
-
-      return result;
-
     }
-  }
 
-}
+  }
 </script>
 
 <style>
