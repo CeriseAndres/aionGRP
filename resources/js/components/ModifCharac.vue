@@ -48,9 +48,8 @@ export default {
   methods: {
       modify: function() {
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
+
+          self.api=api;
           var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=modify";
           var arr ={description: self.description, house: self.house, id:self.$route.params.id};
           $.ajax({
@@ -66,7 +65,7 @@ export default {
               }
           });
           self.$router.push({name: 'mycharacters'});
-        });
+
       },
       test: function (e) {
         var self=this;
@@ -93,9 +92,8 @@ export default {
       },
       show: function(){
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
+
+          self.api=api;
           var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeOne&id="+self.$route.params.id;
           $.getJSON(url, function (data) {
               self.tab=data;
@@ -104,7 +102,7 @@ export default {
               console.log(data);
           });
 
-        });
+
       },
       onImageChange: function(e){
         var self=this;

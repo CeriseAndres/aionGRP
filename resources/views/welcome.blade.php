@@ -15,7 +15,7 @@
 <script>
 
 var name='<?php echo "elineda"?>';
-var password='<?php echo "$2y$10\$mnfm6Z7F5to12OULtUKu0.0oFRY9xXR3X.lTiCXVCcPnXqRZw/z8y"?>';
+var api='<?php echo "CJdtB26RuTxhD6kSSimX6Je62eI="?>';
 var ert="azeazeaz";
 var burl="http://localhost/aionGRP/";
 console.log(ert.length);

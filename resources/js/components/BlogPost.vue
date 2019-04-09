@@ -28,10 +28,10 @@ export default {
   methods: {
       addpost (){
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
-          axios.post("burl+'api.php?w=blog&v=addBlog&name='+name+'&api='+self.api+'&id='+self.$route.params.id", {
+
+          self.api=api;
+          url=burl+'api.php?w=blog&v=addBlog&name='+name+'&api='+self.api+'&id='+self.$route.params.id;
+          axios.post(url, {
             title: self.title,
             content: self.content
           })
@@ -43,7 +43,7 @@ export default {
                  console.log('erreur'+error);
 
                });
-        });
+
       },
 
    }

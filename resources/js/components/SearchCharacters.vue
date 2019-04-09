@@ -47,15 +47,14 @@
     methods: {
       search: function() {
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
+
+          self.api=api;
           var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=search&type=name&clef="+self.clef;
           $.getJSON(url, function (data) {
             self.tab=data;
             console.log(data);
           });
-        });
+
       }
     },
     mounted() {

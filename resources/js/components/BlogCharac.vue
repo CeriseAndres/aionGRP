@@ -40,9 +40,8 @@ export default {
   methods: {
       selectTen: function() {
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
+
+          self.api=api;
           var url= burl+"api.php?w=blog&v=selectTen&name="+name+"&api="+self.api+"&off=0&idchar="+self.$route.params.id;
           axios.get(url)
           .then(function (response) {
@@ -55,7 +54,7 @@ export default {
                     console.log(url);
 
                   });
-        });
+
       }
     },
    mounted() {

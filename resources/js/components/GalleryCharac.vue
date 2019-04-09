@@ -43,9 +43,8 @@ export default {
   methods: {
     imgtakeall: function() {
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
+
+          self.api=api;
           var url= burl+"api.php?w=blog&v=imgtakeall&name="+name+"&api="+self.api+'&idchar='+self.$route.params.id;
           axios.get(url)
           .then(function (response) {
@@ -57,7 +56,7 @@ export default {
                     console.log(url);
 
                   });
-        });
+
       },
       toggle: function(id) {
    			this.show = id;
@@ -76,9 +75,8 @@ export default {
    		},
       changeAvatar: function(idimg) {
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
+
+          self.api=api;
           var url= burl+"api.php?w=blog&v=makedef&name="+name+"&api="+self.api+'&idchar='+self.$route.params.id+'&id='+idimg;
           axios.get(url)
           .then(function (response) {
@@ -90,7 +88,7 @@ export default {
                     console.log(url);
 
                   });
-        });
+
       },
     },
 

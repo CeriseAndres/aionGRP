@@ -50,16 +50,15 @@ export default {
   methods: {
       takeOne: function() {
         var self=this;
-        var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-        $.getJSON(urlapi, function(data){
-          self.api=data;
+
+          self.api=api;
           var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeOne&id="+self.$route.params.id;
           $.getJSON(url, function (data) {
               self.tab=data;
               console.log(data);
 
           });
-        });
+
       },
       takeTab: function(){
         console.log(this.tab);

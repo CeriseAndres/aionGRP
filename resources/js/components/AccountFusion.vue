@@ -54,9 +54,8 @@ export default {
     methods: {
         takeList: function () {
             var self=this;
-            var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-            $.getJSON(urlapi, function (data) {
-                self.api=data;
+
+                self.api=api;
                 var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeAcc";
                 $.getJSON(url, function (data) {
                     self.tab=data;
@@ -69,18 +68,17 @@ export default {
                     }
 
                 })
-            })
+
         },
         getplayers: function () {
             console.log(this.players);
         },
         link: function () {
             var self=this;
-            var urlapi= burl+"api.php?w=api&name="+name+"&password="+password;
-            $.getJSON(urlapi, function (data) {
-                var url= burl+"api.php?w=account&name="+name+"&api="+self.api;
+
+                var url= burl+"api.php?w=account&name="+name+"&api="+api;
                 var arr={user: self.aionname,password: self.aionpass};
-                console.log(arr);
+                console.log(url);
 
                 axios.post(url, arr)
                     .then(function (response) {
@@ -91,7 +89,7 @@ export default {
                     });
                 console.log('ok');
                 self.takeList();
-            })
+
         }
     },
     mounted() {

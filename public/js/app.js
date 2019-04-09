@@ -1822,21 +1822,18 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     takeList: function takeList() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeAcc";
-        jquery__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON(url, function (data) {
-          self.tab = data;
+      self.api = api;
+      var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeAcc";
+      jquery__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON(url, function (data) {
+        self.tab = data;
 
-          for (var i = 0; i < self.tab.length; i++) {
-            var url = burl + "api.php?w=getAcc&name=" + name + "&api=" + self.api + "&id=" + self.tab[i][0];
-            console.log(url);
-            jquery__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON(url, function (data) {
-              self.players.push(data);
-            });
-          }
-        });
+        for (var i = 0; i < self.tab.length; i++) {
+          var url = burl + "api.php?w=getAcc&name=" + name + "&api=" + self.api + "&id=" + self.tab[i][0];
+          console.log(url);
+          jquery__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON(url, function (data) {
+            self.players.push(data);
+          });
+        }
       });
     },
     getplayers: function getplayers() {
@@ -1844,22 +1841,19 @@ __webpack_require__.r(__webpack_exports__);
     },
     link: function link() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_1___default.a.getJSON(urlapi, function (data) {
-        var url = burl + "api.php?w=account&name=" + name + "&api=" + self.api;
-        var arr = {
-          user: self.aionname,
-          password: self.aionpass
-        };
-        console.log(arr);
-        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, arr).then(function (response) {
-          console.log(response);
-        }).catch(function (error) {
-          console.log(error);
-        });
-        console.log('ok');
-        self.takeList();
+      var url = burl + "api.php?w=account&name=" + name + "&api=" + api;
+      var arr = {
+        user: self.aionname,
+        password: self.aionpass
+      };
+      console.log(url);
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, arr).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
       });
+      console.log('ok');
+      self.takeList();
     }
   },
   mounted: function mounted() {
@@ -1927,17 +1921,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     selectTen: function selectTen() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=blog&v=selectTen&name=" + name + "&api=" + self.api + "&off=0&idchar=" + self.$route.params.id;
-        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
-          self.tab = response.data;
-          console.log(url);
-        }).catch(function (error) {
-          console.log('erreur' + error);
-          console.log(url);
-        });
+      self.api = api;
+      var url = burl + "api.php?w=blog&v=selectTen&name=" + name + "&api=" + self.api + "&off=0&idchar=" + self.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+        self.tab = response.data;
+        console.log(url);
+      }).catch(function (error) {
+        console.log('erreur' + error);
+        console.log(url);
       });
     }
   },
@@ -1988,18 +1979,16 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addpost: function addpost() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("burl+'api.php?w=blog&v=addBlog&name='+name+'&api='+self.api+'&id='+self.$route.params.id", {
-          title: self.title,
-          content: self.content
-        }).then(function (response) {
-          console.log('marche' + response.data.success);
-          alert('posted');
-        }).catch(function (error) {
-          console.log('erreur' + error);
-        });
+      self.api = api;
+      url = burl + 'api.php?w=blog&v=addBlog&name=' + name + '&api=' + self.api + '&id=' + self.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(url, {
+        title: self.title,
+        content: self.content
+      }).then(function (response) {
+        console.log('marche' + response.data.success);
+        alert('posted');
+      }).catch(function (error) {
+        console.log('erreur' + error);
       });
     }
   }
@@ -2067,17 +2056,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     imgtakeall: function imgtakeall() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=blog&v=imgtakeall&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id;
-        axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
-          self.tab = response.data;
-          console.log(self.tab);
-        }).catch(function (error) {
-          console.log('erreur' + error);
-          console.log(url);
-        });
+      self.api = api;
+      var url = burl + "api.php?w=blog&v=imgtakeall&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
+        self.tab = response.data;
+        console.log(self.tab);
+      }).catch(function (error) {
+        console.log('erreur' + error);
+        console.log(url);
       });
     },
     toggle: function toggle(id) {
@@ -2097,17 +2083,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     changeAvatar: function changeAvatar(idimg) {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_2___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=blog&v=makedef&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id + '&id=' + idimg;
-        axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
-          console.log(response);
-          alert('done');
-        }).catch(function (error) {
-          console.log('erreur' + error);
-          console.log(url);
-        });
+      self.api = api;
+      var url = burl + "api.php?w=blog&v=makedef&name=" + name + "&api=" + self.api + '&idchar=' + self.$route.params.id + '&id=' + idimg;
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
+        console.log(response);
+        alert('done');
+      }).catch(function (error) {
+        console.log('erreur' + error);
+        console.log(url);
       });
     }
   },
@@ -2180,30 +2163,27 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     modify: function modify() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=modify";
-        var arr = {
-          description: self.description,
-          house: self.house,
-          id: self.$route.params.id
-        };
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
-          url: url,
-          type: 'POST',
-          data: JSON.stringify(arr),
-          contentType: 'application/json;',
-          dataType: 'json',
-          async: true,
-          success: function success(msg) {
-            console.log('ok');
-            alert('change accepted');
-          }
-        });
-        self.$router.push({
-          name: 'mycharacters'
-        });
+      self.api = api;
+      var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=modify";
+      var arr = {
+        description: self.description,
+        house: self.house,
+        id: self.$route.params.id
+      };
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(arr),
+        contentType: 'application/json;',
+        dataType: 'json',
+        async: true,
+        success: function success(msg) {
+          console.log('ok');
+          alert('change accepted');
+        }
+      });
+      self.$router.push({
+        name: 'mycharacters'
       });
     },
     test: function test(e) {
@@ -2229,16 +2209,13 @@ __webpack_require__.r(__webpack_exports__);
     },
     show: function show() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
-          self.tab = data;
-          self.house = self.tab.house;
-          self.description = self.tab.description;
-          console.log(data);
-        });
+      self.api = api;
+      var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
+        self.tab = data;
+        self.house = self.tab.house;
+        self.description = self.tab.description;
+        console.log(data);
       });
     },
     onImageChange: function onImageChange(e) {
@@ -2320,13 +2297,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     takeTen: function takeTen() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeMy&off=0";
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
-          self.tab = data;
-        });
+      self.api = api;
+      var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeMy&off=0";
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
+        self.tab = data;
       });
     }
   },
@@ -2417,14 +2391,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     search: function search() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=search&type=name&clef=" + self.clef;
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
-          self.tab = data;
-          console.log(data);
-        });
+      self.api = api;
+      var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=search&type=name&clef=" + self.clef;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
+        self.tab = data;
+        console.log(data);
       });
     }
   },
@@ -2507,14 +2478,11 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     takeOne: function takeOne() {
       var self = this;
-      var urlapi = burl + "api.php?w=api&name=" + name + "&password=" + password;
-      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(urlapi, function (data) {
-        self.api = data;
-        var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
-        jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
-          self.tab = data;
-          console.log(data);
-        });
+      self.api = api;
+      var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=takeOne&id=" + self.$route.params.id;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default.a.getJSON(url, function (data) {
+        self.tab = data;
+        console.log(data);
       });
     },
     takeTab: function takeTab() {
