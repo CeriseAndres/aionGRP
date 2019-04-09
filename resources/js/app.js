@@ -17,42 +17,42 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         {
-            path:'/aionGRPlaravel/public/mycharacters',
+            path:'/aionGRP/mycharacters',
             name: 'mycharacters',
             component: MyCharacters,
         },
         {
-            path:'/aionGRPlaravel/public/searchcharacters',
+            path:'/aionGRP/searchcharacters',
             name: 'searchcharacters',
             component: SearchCharacters,
         },
         {
-            path:'/aionGRPlaravel/public/accountfusion',
+            path:'/aionGRP/accountfusion',
             name: 'accountfusion',
             component: AccountFusion,
         },
         {
-            path:'/aionGRPlaravel/public/modifcharac/:id',
+            path:'/aionGRP/modifcharac/:id',
             name: 'modifcharac',
             component: ModifCharac,
         },
         {
-            path:'/aionGRPlaravel/public/viewcharac/:id',
+            path:'/aionGRP/viewcharac/:id',
             name: 'viewcharac',
             component: ViewCharac,
         },
         {
-            path:'/aionGRPlaravel/public/gallerycharac/:id',
+            path:'/aionGRP/gallerycharac/:id',
             name: 'gallerycharac',
             component: GalleryCharac,
         },
         {
-            path:'/aionGRPlaravel/public/blogcharac/:id',
+            path:'/aionGRP/blogcharac/:id',
             name: 'blogcharac',
             component: BlogCharac,
         },
         {
-            path:'/aionGRPlaravel/public/blogpost/:id',
+            path:'/aionGRP/blogpost/:id',
             name: 'blogpost',
             component: BlogPost,
         },

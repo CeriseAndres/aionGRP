@@ -25,7 +25,7 @@
           <p class="card-text">{{perso.house}}</p>
           <p class="card-text">{{ perso.description | providerDescription}}</p>
           <div id="bottom">
-            <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
+            <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
           </div>
         </div>
       </div>

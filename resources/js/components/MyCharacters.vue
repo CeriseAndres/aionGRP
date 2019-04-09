@@ -14,9 +14,9 @@
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
             <div class="buttons">
-              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Edit</button></router-link>
-              <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
-              <router-link v-bind:to="'/aionGRPlaravel/public/blogcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Blog</button></router-link>
+              <router-link v-bind:to="'/aionGRP/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Edit</button></router-link>
+              <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
+              <router-link v-bind:to="'/aionGRP/blogcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Blog</button></router-link>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@
             </div>
           </div>
           <div class="traits card text-center justify-content-center">
-              <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block btngallery">Gallery</button></router-link>
+              <router-link v-bind:to="'/aionGRP/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block btngallery">Gallery</button></router-link>
               <p class="card-text text-left"><strong>GENDER:</strong> {{tab.gender}}</p>
               <p class="card-text text-left"><strong>RACE:</strong> {{tab.race}}</p>
               <p class="card-text text-left"><strong>CLASS:</strong> {{tab.player_class}}</p>

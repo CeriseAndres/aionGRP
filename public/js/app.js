@@ -21533,9 +21533,7 @@ var render = function() {
           "router-link",
           {
             staticStyle: { color: "#ffffff" },
-            attrs: {
-              to: "/aionGRPlaravel/public/blogpost/" + _vm.$route.params.id
-            }
+            attrs: { to: "/aionGRP/blogpost/" + _vm.$route.params.id }
           },
           [
             _c(
@@ -22041,9 +22039,7 @@ var render = function() {
                     {
                       staticStyle: { color: "#ffffff" },
                       attrs: {
-                        to:
-                          "/aionGRPlaravel/public/modifcharac/" +
-                          perso.character_id
+                        to: "/aionGRP/modifcharac/" + perso.character_id
                       }
                     },
                     [
@@ -22062,11 +22058,7 @@ var render = function() {
                     "router-link",
                     {
                       staticStyle: { color: "#ffffff" },
-                      attrs: {
-                        to:
-                          "/aionGRPlaravel/public/viewcharac/" +
-                          perso.character_id
-                      }
+                      attrs: { to: "/aionGRP/viewcharac/" + perso.character_id }
                     },
                     [
                       _c(
@@ -22084,11 +22076,7 @@ var render = function() {
                     "router-link",
                     {
                       staticStyle: { color: "#ffffff" },
-                      attrs: {
-                        to:
-                          "/aionGRPlaravel/public/blogcharac/" +
-                          perso.character_id
-                      }
+                      attrs: { to: "/aionGRP/blogcharac/" + perso.character_id }
                     },
                     [
                       _c(
@@ -22230,11 +22218,7 @@ var render = function() {
                   "router-link",
                   {
                     staticStyle: { color: "#ffffff" },
-                    attrs: {
-                      to:
-                        "/aionGRPlaravel/public/viewcharac/" +
-                        perso.character_id
-                    }
+                    attrs: { to: "/aionGRP/viewcharac/" + perso.character_id }
                   },
                   [
                     _c(
@@ -22327,9 +22311,7 @@ var render = function() {
                 {
                   staticStyle: { color: "#ffffff" },
                   attrs: {
-                    to:
-                      "/aionGRPlaravel/public/gallerycharac/" +
-                      _vm.tab.character_id
+                    to: "/aionGRP/gallerycharac/" + _vm.tab.character_id
                   }
                 },
                 [
@@ -37183,35 +37165,35 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   mode: 'history',
   routes: [{
-    path: '/aionGRPlaravel/public/mycharacters',
+    path: '/aionGRP/mycharacters',
     name: 'mycharacters',
     component: _components_MyCharacters_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/aionGRPlaravel/public/searchcharacters',
+    path: '/aionGRP/searchcharacters',
     name: 'searchcharacters',
     component: _components_SearchCharacters_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '/aionGRPlaravel/public/accountfusion',
+    path: '/aionGRP/accountfusion',
     name: 'accountfusion',
     component: _components_AccountFusion_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
-    path: '/aionGRPlaravel/public/modifcharac/:id',
+    path: '/aionGRP/modifcharac/:id',
     name: 'modifcharac',
     component: _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
-    path: '/aionGRPlaravel/public/viewcharac/:id',
+    path: '/aionGRP/viewcharac/:id',
     name: 'viewcharac',
     component: _components_ViewCharac_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
-    path: '/aionGRPlaravel/public/gallerycharac/:id',
+    path: '/aionGRP/gallerycharac/:id',
     name: 'gallerycharac',
     component: _components_GalleryCharac_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
-    path: '/aionGRPlaravel/public/blogcharac/:id',
+    path: '/aionGRP/blogcharac/:id',
     name: 'blogcharac',
     component: _components_BlogCharac_vue__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
-    path: '/aionGRPlaravel/public/blogpost/:id',
+    path: '/aionGRP/blogpost/:id',
     name: 'blogpost',
     component: _components_BlogPost_vue__WEBPACK_IMPORTED_MODULE_10__["default"]
   }]

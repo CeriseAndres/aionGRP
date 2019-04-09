@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="buttonadd">
-      <router-link v-bind:to="'/aionGRPlaravel/public/blogpost/'+$route.params.id" style="color: #ffffff"><button type="button" class="addpost btn btn-block">Add post</button></router-link>
+      <router-link v-bind:to="'/aionGRP/blogpost/'+$route.params.id" style="color: #ffffff"><button type="button" class="addpost btn btn-block">Add post</button></router-link>
     </div>
     <div class="accordion" id="allposts" >
       <div class="card" v-for="post in tab">
