@@ -1920,6 +1920,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -1956,10 +1957,12 @@ __webpack_require__.r(__webpack_exports__);
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#didi').hide();
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#did').hide();
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#title').hide();
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#filtre').show();
       } else {
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#didi').show();
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#did').show();
         jquery__WEBPACK_IMPORTED_MODULE_2___default()('#title').show();
+        jquery__WEBPACK_IMPORTED_MODULE_2___default()('#filtre').hide();
       }
     }
   },
@@ -2133,6 +2136,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
 //
 //
 //
@@ -6818,7 +6824,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.images {\r\n  max-width: 200px;\r\n  max-height: 300px;\n}\n.gallery {\r\n    margin-bottom: 30px;\n}\n.content>a {\r\n\t\tmargin:  auto;\r\n\t\tborder: none;\r\n\t\tpadding: 10px;\r\n\t\tcursor: pointer;\n}\n.modalstyle {\r\n    background: black;\r\n    width: 1000px;\r\n    height: 1000px;\r\n\t\tmargin: auto;\r\n\t\tcursor: pointer;\n}\n.modalimg>.imgModal{\r\n  position: absolute;\r\n  top: -40px;\r\n  left: 110px;\r\n  max-width: 900px;\r\n  max-height: 600px;\n}\n.fade-enter-active, .fade-leave-active {\r\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\r\n    transition: opacity .5s;\n}\r\n", ""]);
+exports.push([module.i, "\n.images {\n  max-width: 200px;\n  max-height: 300px;\n}\n.gallery {\n    margin-bottom: 30px;\n}\n.content>a {\n\t\tmargin:  auto;\n\t\tborder: none;\n\t\tpadding: 10px;\n\t\tcursor: pointer;\n}\n#filtre{\n  position:absolute;\n  width:179%;\n  left: -110px;\n  top: -110px;\n  background-color:black;\n  z-index:1;\n  min-height: 300%;\n}\n.imgModal{\n  position: relative;\n  max-width: 900px;\n  cursor: pointer;\n  z-index:2;\n  display: block;\n  margin: auto;\n  margin-top: 5em;\n  margin-bottom: 5em;\n}\n.fade-enter-active, .fade-leave-active {\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\n    transition: opacity .5s;\n}\n", ""]);
 
 // exports
 
@@ -6856,7 +6862,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\r\n    padding:10px;\n}\n.card-body{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\r\n  max-width: none !important;\r\n  width: auto !important;\r\n  height: 500px !important;\n}\n.imgCharac{\r\n  margin-bottom: 20px;\r\n  max-width: 150px !important;\n}\n.buttons>a{\r\n  width: 80px;\n}\n.buttons{\r\n  display: flex;\r\n  margin-top: auto;\r\n  justify-content: space-between;\n}\n.btn{\r\n  display: inline-block;\r\n  background-color: rgba(154,83,254,1);\n}\nh2{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\n  margin:5px 0;\n}\np{\r\n  width:100%;\r\n  color: black;\n}\r\n", ""]);
+exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\n.btngallery {\n  position : relative;\n  z-index : 2;\n  width: 50px !important;\n  background: rgba(154,83,254,0.5);\n  font-size: 10px !important;\n  padding: 0 !important;\n  top: -43px;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
 
 // exports
 
@@ -6894,7 +6900,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.traits {\r\n  position: relative;\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\n}\n.imgCharac{\r\n  max-height: 266px\n}\n.traits>a {\r\n  z-index: 1;\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 105px;\n}\n.btngallery {\r\n  position : absolute;\r\n  z-index : 2;\r\n  width: 100px;\r\n  background: rgba(154,83,254,0.5);\n}\n.card{\r\n  display: flex;\r\n  padding: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.traits {\n  position: relative;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.imgCharac{\n  max-height: 266px\n}\n.traits>a {\n  z-index: 1;\n  position: absolute;\n  top: 5px;\n  right: 105px;\n}\n.btngallery {\n  position : absolute;\n  z-index : 2;\n  width: 100px;\n  background: rgba(154,83,254,0.5);\n}\n.card{\n  display: flex;\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n\n", ""]);
 
 // exports
 
@@ -21341,10 +21347,12 @@ var render = function() {
                   }
                 },
                 [
-                  _c("img", {
-                    staticClass: "imgModal",
-                    attrs: { src: "/aionGRP/" + image.img_path }
-                  })
+                  _c("div", { attrs: { id: "filtre" } }, [
+                    _c("img", {
+                      staticClass: "imgModal",
+                      attrs: { src: "/aionGRP/" + image.img_path }
+                    })
+                  ])
                 ]
               )
             ])
@@ -21519,10 +21527,39 @@ var render = function() {
                 _vm._v(_vm._s(perso.name))
               ]),
               _vm._v(" "),
-              _c("img", {
-                staticClass: "imgCharac mx-auto rounded d-block",
-                attrs: { src: "/aionGRP/images/1554450961hiver.jpg" }
-              }),
+              _c(
+                "div",
+                { staticClass: "avatar" },
+                [
+                  _c("img", {
+                    staticClass: "imgCharac mx-auto rounded d-block",
+                    attrs: { src: "/aionGRP/images/1554450961hiver.jpg" }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticStyle: { color: "#ffffff" },
+                      attrs: {
+                        to:
+                          "/aionGRPlaravel/public/gallerycharac/" +
+                          perso.character_id
+                      }
+                    },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-lg btn-block btnchange",
+                          attrs: { type: "button" }
+                        },
+                        [_vm._v("Change")]
+                      )
+                    ]
+                  )
+                ],
+                1
+              ),
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
                 _vm._v(_vm._s(perso.gender) + " - " + _vm._s(perso.race))
@@ -21554,7 +21591,7 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass: "btn btn-lg btn-block",
+                          staticClass: "btn btn-block",
                           attrs: { type: "button" }
                         },
                         [_vm._v("Edit")]
@@ -21576,7 +21613,7 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass: "btn btn-lg btn-block",
+                          staticClass: "btn btn-block",
                           attrs: { type: "button" }
                         },
                         [_vm._v("View")]
@@ -21596,7 +21633,7 @@ var render = function() {
                       _c(
                         "button",
                         {
-                          staticClass: "btn btn-lg btn-block",
+                          staticClass: "btn btn-block",
                           attrs: { type: "button" }
                         },
                         [_vm._v("Blog")]
@@ -37247,8 +37284,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

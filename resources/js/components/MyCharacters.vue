@@ -5,14 +5,17 @@
 
           <div class="card-body ">
             <h2 class="card-title">{{perso.name}}</h2>
-            <img src="/aionGRP/images/1554450961hiver.jpg" class="imgCharac mx-auto rounded d-block">
+            <div class="avatar">
+              <img src="/aionGRP/images/1554450961hiver.jpg" class="imgCharac mx-auto rounded d-block">
+              <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block btnchange">Change</button></router-link>
+            </div>
             <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
             <div class="buttons">
-              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Edit</button></router-link>
-              <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
-              <router-link v-bind:to="'/aionGRPlaravel/public/blog/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">Blog</button></router-link>
+              <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Edit</button></router-link>
+              <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
+              <router-link v-bind:to="'/aionGRPlaravel/public/blog/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Blog</button></router-link>
             </div>
           </div>
         </div>
@@ -91,10 +94,20 @@ export default {
   width: auto !important;
   height: 500px !important;
 }
+.btnchange {
+  position : relative;
+  z-index : 2;
+  width: 50px;
+  background: rgba(154,83,254,0.5) !important;
+  font-size: 12px;
+  padding: 0;
+  top: -44px;
+}
 .imgCharac{
   margin-bottom: 20px;
   max-width: 150px !important;
 }
+
 .buttons>a{
   width: 80px;
 }
@@ -103,9 +116,14 @@ export default {
   margin-top: auto;
   justify-content: space-between;
 }
-.btn{
-  display: inline-block;
-  background-color: rgba(154,83,254,1);
+.btngallery {
+  position : relative;
+  z-index : 2;
+  width: 50px !important;
+  background: rgba(154,83,254,0.5);
+  font-size: 10px !important;
+  padding: 0 !important;
+  top: -43px;
 }
 h2{
   width:95%;

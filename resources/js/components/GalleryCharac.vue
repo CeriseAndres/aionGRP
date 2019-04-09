@@ -12,8 +12,9 @@
 
     <div v-for="image in tab">
       <transition name="fade">
-        <div class="modalstyle" v-show="show==image.id" v-on:click="toggle(false)">
-          <img class="imgModal" v-bind:src="'/aionGRP/'+image.img_path">
+        <div  class="modalstyle" v-show="show==image.id" v-on:click="toggle(false)">
+          <div id="filtre"><img class="imgModal" v-bind:src="'/aionGRP/'+image.img_path"></div>
+
         </div>
      </transition>
    </div>
@@ -59,11 +60,13 @@ export default {
           $('#didi').hide();
           $('#did').hide();
           $('#title').hide();
+          $('#filtre').show();
         }
         else{
           $('#didi').show();
           $('#did').show();
           $('#title').show();
+          $('#filtre').hide();
         }
    		},
     },
@@ -87,20 +90,26 @@ export default {
 		padding: 10px;
 		cursor: pointer;
 }
-.modalstyle {
-    background: black;
-    width: 1000px;
-    height: 1000px;
-		margin: auto;
-		cursor: pointer;
+#filtre{
+  position:absolute;
+  width:179%;
+  left: -110px;
+  top: -110px;
+  background-color:black;
+  z-index:1;
+  min-height: 300%;
 }
-.modalimg>.imgModal{
-  position: absolute;
-  top: -40px;
-  left: 110px;
+.imgModal{
+  position: relative;
   max-width: 900px;
-  max-height: 600px;
+  cursor: pointer;
+  z-index:2;
+  display: block;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
 }
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }
