@@ -16,7 +16,7 @@
             <div class="buttons">
               <router-link v-bind:to="'/aionGRPlaravel/public/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Edit</button></router-link>
               <router-link v-bind:to="'/aionGRPlaravel/public/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
-              <router-link v-bind:to="'/aionGRPlaravel/public/blog/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Blog</button></router-link>
+              <router-link v-bind:to="'/aionGRPlaravel/public/blogcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Blog</button></router-link>
             </div>
           </div>
         </div>
