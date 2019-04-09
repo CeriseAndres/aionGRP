@@ -2,17 +2,33 @@
 <div>
 <h3>My characters liked</h3>
 <p>There is the list of characters imported here</p>
-    <div v-for="account in players">
+    <div class="fusion" v-for="account in players">
     <ul v-for="player in account">
         <li>{{player.name}}</li>
     </ul>
     </div>
 
-    <div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="row">
         <p>If you want import or update some character ty to login here with youre aion GRP account</p>
-        <input type="text" v-model="aionname">
-        <input type="password" v-model="aionpass">
-        <input type="submit" v-on:click="link">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon3">Account name</span>
+            </div>
+            <input type="text" v-model="aionname" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon">Password</span>
+            </div>
+            <input type="password" v-model="aionpass" class="form-control" id="basic-url1" aria-describedby="basic-addon">
+        </div>
+            </div>
+            </div>
+            <button type="button" id="inputfusion" class="btn" v-on:click="link">Login</button>
+        </div>
     </div>
 
 </div>
@@ -96,5 +112,22 @@ export default {
 </script>
 
 <style>
-
+p{
+    color:white;
+}
+    .fusion{
+        display: inline-flex;
+    }
+    .fusion>ul{
+        display: inline-flex;
+        list-style-type: none;
+    }
+    .form-control{
+        width: auto !important;
+    }
+    #inputfusion{
+        height: 100px;
+        margin: auto;
+        margin-top:3.8em;
+    }
 </style>
