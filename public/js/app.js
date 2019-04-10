@@ -7136,7 +7136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.form-control{\n  padding: 1px;\n}\n.input-group > .form-control, .input-group > .form-control-plaintext {\n  width: 100%;\n  height: 100%;\n  pointer: cursor;\n}\n.btn:hover {\n  background-color: #8746ff;\n  font-weight: bold;\n}\n.input-group > .form-control:not(:last-child) {\n  border-radius: 4px;\n}\n", ""]);
+exports.push([module.i, "\n=======\n<style scoped>\n  body{\n      overflow-wrap: break-word;\n}\n>>>>>>> a89cfd7f80c758a2e84aca316dff898165921aeb\n  .form-control{\n    padding: 1px;\n    width: 100% !important;\n}\n.input-group > .form-control, .input-group > .form-control-plaintext {\n    width: 100%;\n    height: 100%;\n    pointer: cursor;\n}\n.btn:hover {\n    background-color: #8746ff;\n    font-weight: bold;\n}\n.input-group > .form-control:not(:last-child) {\n    border-radius: 4px;\n}\n", ""]);
 
 // exports
 
@@ -7155,7 +7155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\nmargin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
 
 // exports
 
@@ -7174,7 +7174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\n  padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  width: 200px;\n  max-width: 200px;\n  height: 400px;\n  background: rgba(154,83,254,0.5);\n}\n#bottom{\n}\n#bottom a:last-child{\n}\n.btn{\n  display: inline-block;\n  background-color: rgba(154,83,254,1);\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n#inputsearch{\n  height: 40px !important;\n  margin-left: 0.5em;\n}\n", ""]);
+exports.push([module.i, "\n.btn{\n  display: inline-block;\n  background-color: rgba(154,83,254,1);\n}\n.card-container{\n  padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\n  margin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n#inputsearch{\n  height: 40px !important;\n  margin-left: 0.5em;\n}\n#bottom{\n  margin-top:auto;\n}\n", ""]);
 
 // exports
 
@@ -22492,73 +22492,77 @@ var render = function() {
       "div",
       { staticClass: "card-group" },
       _vm._l(_vm.tab, function(perso) {
-        return _c("div", { staticClass: "card-container text-center" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("h2", { staticClass: "card-title" }, [
-              _vm._v(_vm._s(perso.name))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "avatar" }, [
-              perso.imgdef == -1
-                ? _c("img", {
-                    staticClass: "imgCharac mx-auto rounded d-block",
-                    attrs: {
-                      src:
-                        "/aionGRP/images/1554710433aurene-head-emoji_orig.png"
-                    }
-                  })
-                : _vm._e(),
+        return _c(
+          "div",
+          { staticClass: "card-container text-center col-md-6" },
+          [
+            _c("div", { staticClass: "card-body" }, [
+              _c("h2", { staticClass: "card-title" }, [
+                _vm._v(_vm._s(perso.name))
+              ]),
               _vm._v(" "),
-              perso.imgdef != -1
-                ? _c("img", {
-                    staticClass: "imgCharac mx-auto rounded d-block",
-                    attrs: { src: "/aionGRP/" + perso.imgdef }
-                  })
-                : _vm._e()
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(perso.gender) + " - " + _vm._s(perso.race))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(perso.player_class))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(perso.house))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(_vm._s(_vm._f("providerDescription")(perso.description)))
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { attrs: { id: "bottom" } },
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticStyle: { color: "#ffffff" },
-                    attrs: { to: "/aionGRP/viewcharac/" + perso.character_id }
-                  },
-                  [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-lg btn-block",
-                        attrs: { type: "button" }
-                      },
-                      [_vm._v("View")]
-                    )
-                  ]
-                )
-              ],
-              1
-            )
-          ])
-        ])
+              _c("div", { staticClass: "avatar" }, [
+                perso.imgdef == -1
+                  ? _c("img", {
+                      staticClass: "imgCharac mx-auto rounded d-block",
+                      attrs: {
+                        src:
+                          "/aionGRP/images/1554710433aurene-head-emoji_orig.png"
+                      }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                perso.imgdef != -1
+                  ? _c("img", {
+                      staticClass: "imgCharac mx-auto rounded d-block",
+                      attrs: { src: "/aionGRP/" + perso.imgdef }
+                    })
+                  : _vm._e()
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(perso.gender) + " - " + _vm._s(perso.race))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(perso.player_class))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(perso.house))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(_vm._s(_vm._f("providerDescription")(perso.description)))
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { attrs: { id: "bottom" } },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      staticStyle: { color: "#ffffff" },
+                      attrs: { to: "/aionGRP/viewcharac/" + perso.character_id }
+                    },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-lg btn-block",
+                          attrs: { type: "button" }
+                        },
+                        [_vm._v("View")]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
+          ]
+        )
       }),
       0
     )

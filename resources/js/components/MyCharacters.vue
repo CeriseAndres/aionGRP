@@ -121,7 +121,7 @@ h2{
   color: #ffffff;
 
   font-weight:bold;
-  margin:5px 0;
+margin:5px 0;
 }
 p{
   width:100%;
