@@ -12,7 +12,7 @@
 
 
     <div class="card-group">
-      <div class="card-container text-center" v-for="perso in tab">
+      <div class="card-container text-center col-md-6" v-for="perso in tab">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h2 class="card-title">{{perso.name}}</h2>
@@ -80,6 +80,11 @@
 </script>
 
 <style>
+
+  .btn{
+    display: inline-block;
+    background-color: rgba(154,83,254,1);
+  }
   .card-container{
     padding:10px;
   }
@@ -88,18 +93,32 @@
     flex-direction: column;
     border: 1px solid darkgoldenrod;
     border-radius: 12px;
-    width: 200px;
-    max-width: 200px;
-    height: 400px;
     background: rgba(154,83,254,0.5);
+    max-width: none !important;
+    width: auto !important;
+    height: 500px !important;
   }
-  #bottom{
+  .btnchange {
+    position : relative;
+    z-index : 2;
+    width: 50px;
+    background: rgba(154,83,254,0.5) !important;
+    font-size: 12px;
+    padding: 0;
+    top: -44px;
   }
-  #bottom a:last-child{
+  .imgCharac{
+    margin-bottom: 20px;
+    max-width: 150px !important;
   }
-  .btn{
-    display: inline-block;
-    background-color: rgba(154,83,254,1);
+
+  .buttons>a{
+    width: 80px;
+  }
+  .buttons{
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
   }
   h2{
     width:95%;
@@ -116,5 +135,8 @@
   #inputsearch{
     height: 40px !important;
     margin-left: 0.5em;
+  }
+  #bottom{
+    margin-top:auto;
   }
 </style>

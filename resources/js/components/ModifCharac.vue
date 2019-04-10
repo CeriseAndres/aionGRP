@@ -132,12 +132,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   body{
       overflow-wrap: break-word;
   }
   .form-control{
     padding: 1px;
+    width: 100% !important;
   }
   .input-group > .form-control, .input-group > .form-control-plaintext {
     width: 100%;
