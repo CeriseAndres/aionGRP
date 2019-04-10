@@ -133,9 +133,6 @@ export default {
 </script>
 
 <style>
-  body{
-      overflow-wrap: break-word;
-  }
   .form-control{
     padding: 1px;
   }

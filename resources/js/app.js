@@ -12,6 +12,7 @@ import ViewCharac from './components/ViewCharac.vue'
 import GalleryCharac from './components/GalleryCharac.vue'
 import BlogCharac from './components/BlogCharac.vue'
 import BlogPost from './components/BlogPost.vue'
+import BlogEdit from './components/BlogEdit.vue'
 
 const router = new VueRouter({
     mode: 'history',
@@ -55,6 +56,11 @@ const router = new VueRouter({
             path:'/aionGRP/blogpost/:id',
             name: 'blogpost',
             component: BlogPost,
+        },
+        {
+            path:'/aionGRP/blogedit/:id',
+            name: 'blogedit',
+            component: BlogEdit,
         },
     ],
 });
