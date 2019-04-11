@@ -131,4 +131,8 @@
     text-decoration: none;
     background: rgba(154,83,254,1);
   }
+  .imgCharac{
+    margin-bottom: 20px;
+    max-width: 150px !important;
+  }
 </style>
