@@ -27,7 +27,7 @@
         </div>
             </div>
             </div>
-            <button type="button" id="inputfusion" class="btn" v-on:click="link">Login</button>
+            <button type="button" id="inputfusion" class="btn btnLogin" v-on:click="link">Login</button>
         </div>
     </div>
 
@@ -107,23 +107,48 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 p{
     color:white;
 }
-    .fusion{
-        display: inline-flex;
-    }
-    .fusion>ul{
-        display: inline-flex;
-        list-style-type: none;
-    }
-    .form-control{
-        width: auto !important;
-    }
-    #inputfusion{
-        height: 100px;
-        margin: auto;
-        margin-top:3.8em;
-    }
+.fusion{
+    display: inline-flex;
+}
+.fusion>ul{
+    display: inline-flex;
+    list-style-type: none;
+}
+.form-control{
+    width: auto !important;
+}
+#inputfusion{
+    height: 100px;
+    margin: auto;
+    margin-top:3.8em;
+}
+#basic-addon{
+  background: rgba(154,83,254,1);
+  color: #ffffff !important;
+  text-transform: uppercase;
+  height: 38px;
+}
+#basic-addon3{
+  background: rgba(154,83,254,1);
+  color: #ffffff !important;
+  text-transform: uppercase;
+  height: 38px;
+}
+.btn{
+  display: inline-block;
+  text-decoration: none !important;
+  background: rgba(154,83,254,0.5);
+  border-radius:3px;
+  width: 80px;
+  color: #ffffff !important;
+  text-transform: uppercase;
+}
+.btn:hover{
+  text-decoration: none;
+  background: rgba(154,83,254,1);
+}
 </style>

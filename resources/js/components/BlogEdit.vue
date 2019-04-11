@@ -9,7 +9,7 @@
             <input type="text" class="form-control" v-model="title" name="title"><br>
             <label for="formControlTextarea">CONTENT</label>
             <textarea class="form-control" v-model="content" name="content" rows="8"></textarea>
-            <a v-on:click="editpost" class="btn btn-lg btn-block">accept</a>
+            <a v-on:click="editpost" class="btn btn-block">ACCEPT</a>
           </div>
         </form>
       </div>
@@ -59,6 +59,7 @@ export default {
 
 }
 </script>
+
 <style scoped>
 .form-group{
   display: flex;
@@ -66,5 +67,15 @@ export default {
 }
 h1{
   text-align: center;
+}
+.btn{
+  color: #ffffff;
+  background: rgba(154,83,254,0.5);
+  border-radius:3px;
+}
+.btn:hover{
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(154,83,254,1);
 }
 </style>

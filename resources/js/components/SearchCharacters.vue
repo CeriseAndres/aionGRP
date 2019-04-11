@@ -6,7 +6,7 @@
           <span class="input-group-text" id="basic-addon">Search</span>
         </div>
         <input type="text" v-model="clef" class="form-control" id="basic-url1" aria-describedby="basic-addon">
-        <button type="button" id="inputsearch" class="btn" v-on:click="search">Login</button>
+        <button type="button" id="inputsearch" class="btn btn-block" v-on:click="search">Login</button>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
           <p class="card-text">{{perso.house}}</p>
           <p class="card-text">{{ perso.description | providerDescription}}</p>
           <div id="bottom">
-            <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block">View</button></router-link>
+            <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
           </div>
         </div>
       </div>
@@ -79,12 +79,7 @@
   }
 </script>
 
-<style>
-
-  .btn{
-    display: inline-block;
-    background-color: rgba(154,83,254,1);
-  }
+<style scoped>
   .card-container{
     padding:10px;
   }
@@ -97,28 +92,6 @@
     max-width: none !important;
     width: auto !important;
     height: 500px !important;
-  }
-  .btnchange {
-    position : relative;
-    z-index : 2;
-    width: 50px;
-    background: rgba(154,83,254,0.5) !important;
-    font-size: 12px;
-    padding: 0;
-    top: -44px;
-  }
-  .imgCharac{
-    margin-bottom: 20px;
-    max-width: 150px !important;
-  }
-
-  .buttons>a{
-    width: 80px;
-  }
-  .buttons{
-    display: flex;
-    margin-top: auto;
-    justify-content: space-between;
   }
   h2{
     width:95%;
@@ -133,10 +106,29 @@
 
   }
   #inputsearch{
-    height: 40px !important;
+    height: 39px !important;
     margin-left: 0.5em;
   }
   #bottom{
     margin-top:auto;
+  }
+  #basic-addon{
+    background: rgba(154,83,254,1);
+    color: #ffffff !important;
+    text-transform: uppercase;
+    height: 38px;
+  }
+  .btn{
+    display: inline-block;
+    text-decoration: none !important;
+    background: rgba(154,83,254,0.5);
+    border-radius:3px;
+    width: 80px;
+    color: #ffffff !important;
+    text-transform: uppercase;
+  }
+  .btn:hover{
+    text-decoration: none;
+    background: rgba(154,83,254,1);
   }
 </style>

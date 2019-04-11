@@ -8,15 +8,14 @@
             <div class="avatar">
               <img src="/aionGRP/images/kEzzp4YyCZ6cwJ-RWFBqRG5Yk3E.jpg" v-if="perso.imgdef==-1" class="imgCharac mx-auto rounded d-block">
               <img v-bind:src="'/aionGRP/'+perso.imgdef" v-if="perso.imgdef!=-1" class="imgCharac mx-auto rounded d-block">
-              <router-link v-bind:to="'/aionGRPlaravel/public/gallerycharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-lg btn-block btnchange">Change</button></router-link>
             </div>
             <p class="card-text">{{perso.gender}} - {{perso.race}}</p>
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
-            <div class="buttons">
-              <router-link v-bind:to="'/aionGRP/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Edit</button></router-link>
-              <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
-              <router-link v-bind:to="'/aionGRP/blogcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">Blog</button></router-link>
+            <div class="btn-grp buttons">
+              <router-link v-bind:to="'/aionGRP/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">EDIT</button></router-link>
+              <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">VIEW</button></router-link>
+              <router-link v-bind:to="'/aionGRP/blogcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">BLOG</button></router-link>
             </div>
           </div>
         </div>
@@ -64,13 +63,13 @@ export default {
    filters: {
         providerDescription: function(value) {
             if (!value) return '';
-            if (value.length < 25) {
+            if (value.length < 150) {
 
                var result = value;
             }
             else {
 
-               var result = value.substring(0, 25) + ' [...]';
+               var result = value.substring(0, 150) + ' [...]';
             }
 
             return result;
@@ -80,7 +79,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .card-container{
     padding:10px;
 }
@@ -90,31 +89,30 @@ export default {
   border: 1px solid darkgoldenrod;
   border-radius: 12px;
   background: rgba(154,83,254,0.5);
-  max-width: none !important;
-  width: auto !important;
-  height: 500px !important;
-}
-.btnchange {
-  position : relative;
-  z-index : 2;
-  width: 50px;
-  background: rgba(154,83,254,0.5) !important;
-  font-size: 12px;
-  padding: 0;
-  top: -44px;
+  max-width: none;
+  width: auto;
+  height: 500px;
 }
 .imgCharac{
   margin-bottom: 20px;
   max-width: 150px !important;
 }
-
-.buttons>a{
-  width: 80px;
+.btn{
+  color: #ffffff !important;
 }
 .buttons{
   display: flex;
   margin-top: auto;
   justify-content: space-between;
+}
+.buttons>a{
+  background: rgba(154,83,254,0.5);
+  border-radius:3px;
+  width: 80px;
+}
+.buttons>a:hover{
+  text-decoration: none;
+  background: rgba(154,83,254,1);
 }
 h2{
   width:95%;
@@ -124,8 +122,6 @@ h2{
 margin:5px 0;
 }
 p{
-  width:100%;
   color: black;
-
 }
 </style>

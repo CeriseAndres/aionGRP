@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="buttonadd">
-      <router-link v-bind:to="'/aionGRP/blogpost/'+$route.params.id" style="color: #ffffff"><button type="button" class="addpost btn">Add post</button></router-link>
+      <router-link v-bind:to="'/aionGRP/blogpost/'+$route.params.id" style="color: #ffffff" v-if="verify"><button type="button" class="addpost btn">ADD POST</button></router-link>
     </div>
 
     <div class="card" v-for="post in tab">
@@ -14,7 +14,7 @@
           </a>
         </div>
         <div class="buttonedit">
-          <router-link v-bind:to="'/aionGRP/blogedit/'+post.id" style="color: #ffffff"><button type="button" class="editpost btn">Edit</button></router-link>
+          <router-link v-bind:to="'/aionGRP/blogedit/'+post.id" style="color: #ffffff" v-if="verify"><button type="button" class="editpost btn">EDIT</button></router-link>
         </div>
       </div>
       <div class="collapse"  v-bind:id="'blog'+post.id">
@@ -39,7 +39,8 @@ export default {
   data: function() {
     return {
       tab:[],
-      api:""
+      api:"",
+      verify:false,
     }
   },
   methods: {
@@ -64,14 +65,23 @@ export default {
       let idu='#'+id;
       $('.collapse').hide();
       $(idu).show();
-
-
-
-
-   },
+      },
+      verifyismine: function(){
+        var self=this;
+        var url=burl+"api.php?w=personnage&v=verifyismine&name="+name+"&api="+self.api+"&idchar="+self.$route.params.id;
+        axios.get(url)
+                .then(function (response) {
+                  self.verify=response.data;
+                  console.log(response.data);
+                })
+                .catch(function (error) {
+                  console.log(error)
+                })
+      },
  },
    mounted() {
      this.selectTen();
+     this.verifyismine();
     }
   }
 
@@ -88,13 +98,11 @@ export default {
 .blog-header>div:last-child{
   margin-left: auto;
 }
-.buttonadd{
-  position: relative;
-  margin: 0 auto;
-  margin-bottom: 20px;
-}
 .card{
   margin-bottom: 20px;
+  border: 1px solid darkgoldenrod;
+  border-radius: 12px;
+  background: rgba(154,83,254,0.5);
 }
 .card-link{
   cursor: pointer;
@@ -102,5 +110,19 @@ export default {
 h4{
   text-transform: uppercase;
   color:black;
+}
+.btn{
+  color: #ffffff;
+  background: rgba(154,83,254,0.5);
+  border-radius:3px;
+}
+.btn:hover{
+  text-decoration: none;
+  background: rgba(154,83,254,1);
+}
+.buttonadd{
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 </style>

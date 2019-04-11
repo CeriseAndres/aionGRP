@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .images {
   max-width: 200px;
   max-height: 300px;
@@ -123,12 +123,20 @@ export default {
     margin-top: auto;
     justify-content: space-between;
 }
-
-.content>a {
-		margin:  auto;
-		border: none;
-		padding: 10px;
-		cursor: pointer;
+.makedefault{
+  color: #ffffff;
+  position : relative;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 200px;
+  margin-top: 5px;
+  font-size: 15px;
+  background: rgba(154,83,254,0.5);
+}
+.btn:hover{
+  color: #ffffff;
+  background: rgba(154,83,254,1);
 }
 #filtre{
   position:absolute;
@@ -149,16 +157,7 @@ export default {
   margin-top: 5em;
   margin-bottom: 5em;
 }
-.makedefault{
-  position : relative;
-  display: block;
-  margin: 0 auto !important;
-  padding: 0 !important;
-  background: rgba(154,83,254,0.5);
-  width: 200px;
-  margin-top: 5px !important;
-  font-size: 15px !important;
-}
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
   }

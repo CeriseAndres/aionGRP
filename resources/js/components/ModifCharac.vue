@@ -7,7 +7,7 @@
         <div class="input-group">
             <label for="file">UPLOAD IMAGE</label>
             <input type="file" class="form-control" id="file" v-on:change="onImageChange" name="file" required />
-            <input type="submit" name="submit"  class="btn submitBtn" value="SAVE"/><br>
+            <input type="submit" name="submit"  class="btn submitBtn" value="SAVE" style="color: #ffffff"/><br>
         </div>
         <img class="img-thumbnail rounded mx-auto d-block" v-if="image" v-bind:src="imagePreview" v-show="showPreview"/>
       </div>
@@ -19,7 +19,7 @@
         <input type="text" class="form-control" v-model="house" name="house"><br>
         <label for="formControlTextarea">DESCRIPTION</label>
         <textarea class="form-control" v-model="description" name="description" rows="3"></textarea>
-        <a v-on:click="modify" class="btn btn-lg btn-block">accept</a>
+        <a v-on:click="modify" class="btn editBtn">ACCEPT</a>
       </div>
     </form>
 
@@ -145,11 +145,17 @@ export default {
     height: 100%;
     pointer: cursor;
   }
-  .btn:hover {
-    background-color: #8746ff;
-    font-weight: bold;
-  }
   .input-group > .form-control:not(:last-child) {
     border-radius: 4px;
+  }
+  .btn{
+    background: rgba(154,83,254,0.5);
+    border-radius:3px;
+    width: 80px;
+    color: #ffffff !important;
+  }
+  .btn:hover{
+    text-decoration: none;
+    background: rgba(154,83,254,1);
   }
 </style>
