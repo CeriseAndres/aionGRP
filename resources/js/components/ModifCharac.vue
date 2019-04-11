@@ -17,6 +17,14 @@
       <div class="form-group">
         <label for="formInput">HOUSE</label>
         <input type="text" class="form-control" v-model="house" name="house"><br>
+        <label for="formInput">Size</label>
+        <input type="text" class="form-control" v-model="size" name="house"><br>
+        <label for="formInput">Weight</label>
+        <input type="text" class="form-control" v-model="weight" name="house"><br>
+        <label for="formInput">Race</label>
+        <input type="text" class="form-control" v-model="racerp" name="house"><br>
+        <label for="formInput">Age</label>
+        <input type="text" class="form-control" v-model="age" name="house"><br>
         <label for="formControlTextarea">DESCRIPTION</label>
         <textarea class="form-control" v-model="description" name="description" rows="3"></textarea>
         <a v-on:click="modify" class="btn editBtn">ACCEPT</a>
@@ -35,6 +43,10 @@ export default {
     return {
       description:"",
       house: "",
+      size:"",
+      weight:"",
+      racerp:"",
+      age:"",
       tab:[],
       api:"",
       image:"",
@@ -51,7 +63,16 @@ export default {
 
           self.api=api;
           var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=modify";
-          var arr ={description: self.description, house: self.house, id:self.$route.params.id};
+          var data={
+            description: self.description,
+            house: self.house,
+            size: self.size,
+            weight: self.weight,
+            racerp: self.racerp,
+            age: self.age,
+
+          };
+          var arr ={data: data, id:self.$route.params.id};
           $.ajax({
               url: url,
               type: 'POST',
@@ -99,6 +120,10 @@ export default {
               self.tab=data;
               self.house=self.tab.house;
               self.description=self.tab.description;
+              self.age=self.tab.age;
+              self.racerp=self.tab.racerp;
+              self.size=self.tab.size;
+              self.weight=self.tab.weight;
               console.log(data);
           });
 

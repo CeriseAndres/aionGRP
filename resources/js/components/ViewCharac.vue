@@ -15,10 +15,14 @@
               <router-link v-bind:to="'/aionGRP/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-block btngallery">GALLERY</button></router-link>
               <router-link v-bind:to="'/aionGRP/blogcharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-block btnblog">BLOG</button></router-link>
             </div>
-            <p class="card-text text-left"><strong>GENDER:</strong> {{tab.gender}}</p>
-            <p class="card-text text-left"><strong>RACE:</strong> {{tab.race}}</p>
-            <p class="card-text text-left"><strong>CLASS:</strong> {{tab.player_class}}</p>
-            <p class="card-text text-left"><strong>HOUSE:</strong> {{tab.house}}</p>
+            <p class="card-text text-left"><strong>GENDER :</strong> {{tab.gender}}</p>
+            <p class="card-text text-left"><strong>FACTION :</strong> {{tab.race}}</p>
+            <p class="card-text text-left"><strong>CLASS :</strong> {{tab.player_class}}</p>
+            <p class="card-text text-left"><strong>HOUSE :</strong> {{tab.house}}</p>
+            <p class="card-text text-left"><strong>AGE :</strong> {{tab.age}}</p>
+            <p class="card-text text-left"><strong>RACE :</strong> {{tab.racerp}}</p>
+            <p class="card-text text-left"><strong>SIZE :</strong> {{tab.size}}</p>
+            <p class="card-text text-left"><strong>WEIGHT :</strong> {{tab.weight}}</p>
           </div>
         </div>
 
@@ -86,8 +90,10 @@ export default {
           .then(function (response) {
             let blog=[];
             for (var i = 0; i < 2; i++) {
+              if (typeof response.data[i] !="undefined" ) {
+                blog.push(response.data[i]);
+              }
 
-              blog.push(response.data[i]);
             }
             self.blog=blog;
                 console.log(self.blog);

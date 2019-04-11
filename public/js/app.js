@@ -2255,6 +2255,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2263,6 +2271,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       description: "",
       house: "",
+      size: "",
+      weight: "",
+      racerp: "",
+      age: "",
       tab: [],
       api: "",
       image: "",
@@ -2278,9 +2290,16 @@ __webpack_require__.r(__webpack_exports__);
       var self = this;
       self.api = api;
       var url = burl + "api.php?w=personnage&name=" + name + "&api=" + self.api + "&v=modify";
-      var arr = {
+      var data = {
         description: self.description,
         house: self.house,
+        size: self.size,
+        weight: self.weight,
+        racerp: self.racerp,
+        age: self.age
+      };
+      var arr = {
+        data: data,
         id: self.$route.params.id
       };
       jquery__WEBPACK_IMPORTED_MODULE_0___default.a.ajax({
@@ -2328,6 +2347,10 @@ __webpack_require__.r(__webpack_exports__);
         self.tab = data;
         self.house = self.tab.house;
         self.description = self.tab.description;
+        self.age = self.tab.age;
+        self.racerp = self.tab.racerp;
+        self.size = self.tab.size;
+        self.weight = self.tab.weight;
         console.log(data);
       });
     },
@@ -2591,6 +2614,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2624,7 +2651,9 @@ __webpack_require__.r(__webpack_exports__);
         var blog = [];
 
         for (var i = 0; i < 2; i++) {
-          blog.push(response.data[i]);
+          if (typeof response.data[i] != "undefined") {
+            blog.push(response.data[i]);
+          }
         }
 
         self.blog = blog;
@@ -7113,7 +7142,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\np[data-v-3a449094]{\n    color:white;\n}\n.fusion[data-v-3a449094]{\n    display: inline-flex;\n}\n.fusion>ul[data-v-3a449094]{\n    display: inline-flex;\n    list-style-type: none;\n}\n.form-control[data-v-3a449094]{\n    width: auto !important;\n}\n#inputfusion[data-v-3a449094]{\n    height: 100px;\n    margin: auto;\n    margin-top:3.8em;\n}\n#basic-addon[data-v-3a449094]{\n  background: rgba(154,83,254,1);\n  color: #ffffff !important;\n  text-transform: uppercase;\n  height: 38px;\n}\n#basic-addon3[data-v-3a449094]{\n  background: rgba(154,83,254,1);\n  color: #ffffff !important;\n  text-transform: uppercase;\n  height: 38px;\n}\n.btn[data-v-3a449094]{\n  display: inline-block;\n  text-decoration: none !important;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n  width: 80px;\n  color: #ffffff !important;\n  text-transform: uppercase;\n}\n.btn[data-v-3a449094]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n", ""]);
+exports.push([module.i, "\np[data-v-3a449094]{\r\n    color:white;\n}\n.fusion[data-v-3a449094]{\r\n    display: inline-flex;\n}\n.fusion>ul[data-v-3a449094]{\r\n    display: inline-flex;\r\n    list-style-type: none;\n}\n.form-control[data-v-3a449094]{\r\n    width: auto !important;\n}\n#inputfusion[data-v-3a449094]{\r\n    height: 100px;\r\n    margin: auto;\r\n    margin-top:3.8em;\n}\n#basic-addon[data-v-3a449094]{\r\n  background: rgba(154,83,254,1);\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  height: 38px;\n}\n#basic-addon3[data-v-3a449094]{\r\n  background: rgba(154,83,254,1);\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  height: 38px;\n}\n.btn[data-v-3a449094]{\r\n  display: inline-block;\r\n  text-decoration: none !important;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\r\n  width: 80px;\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\n}\n.btn[data-v-3a449094]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\r\n", ""]);
 
 // exports
 
@@ -7132,7 +7161,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.container[data-v-be4d0836]{\n  display: flex;\n  flex-direction: column;\n}\n.blog-header[data-v-be4d0836]{\n  display: inline-flex;\n}\n.blog-header>div[data-v-be4d0836]:last-child{\n  margin-left: auto;\n}\n.card[data-v-be4d0836]{\n  margin-bottom: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n.card-link[data-v-be4d0836]{\n  cursor: pointer;\n}\nh4[data-v-be4d0836]{\n  text-transform: uppercase;\n  color:black;\n}\n.btn[data-v-be4d0836]{\n  color: #ffffff;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n}\n.btn[data-v-be4d0836]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n.buttonadd[data-v-be4d0836]{\n  position: relative;\n  margin: 0 auto;\n  margin-bottom: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-be4d0836]{\r\n  display: flex;\r\n  flex-direction: column;\n}\n.blog-header[data-v-be4d0836]{\r\n  display: inline-flex;\n}\n.blog-header>div[data-v-be4d0836]:last-child{\r\n  margin-left: auto;\n}\n.card[data-v-be4d0836]{\r\n  margin-bottom: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\n}\n.card-link[data-v-be4d0836]{\r\n  cursor: pointer;\n}\nh4[data-v-be4d0836]{\r\n  text-transform: uppercase;\r\n  color:black;\n}\n.btn[data-v-be4d0836]{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\n}\n.btn[data-v-be4d0836]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\n.buttonadd[data-v-be4d0836]{\r\n  position: relative;\r\n  margin: 0 auto;\r\n  margin-bottom: 20px;\n}\r\n", ""]);
 
 // exports
 
@@ -7151,7 +7180,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.form-group[data-v-59377f92]{\n  display: flex;\n  flex-direction: column;\n}\nh1[data-v-59377f92]{\n  text-align: center;\n}\n.btn[data-v-59377f92]{\n  color: #ffffff;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n}\n.btn[data-v-59377f92]:hover{\n  color: #ffffff;\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n", ""]);
+exports.push([module.i, "\n.form-group[data-v-59377f92]{\r\n  display: flex;\r\n  flex-direction: column;\n}\nh1[data-v-59377f92]{\r\n  text-align: center;\n}\n.btn[data-v-59377f92]{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\n}\n.btn[data-v-59377f92]:hover{\r\n  color: #ffffff;\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\r\n", ""]);
 
 // exports
 
@@ -7170,7 +7199,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.form-group[data-v-bdf3a066]{\n  display: flex;\n  flex-direction: column;\n}\nh1[data-v-bdf3a066]{\n  text-align: center;\n}\n.btn[data-v-bdf3a066]{\n  color: #ffffff;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n}\n.btn[data-v-bdf3a066]:hover{\n  color: #ffffff;\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n", ""]);
+exports.push([module.i, "\n.form-group[data-v-bdf3a066]{\r\n  display: flex;\r\n  flex-direction: column;\n}\nh1[data-v-bdf3a066]{\r\n  text-align: center;\n}\n.btn[data-v-bdf3a066]{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\n}\n.btn[data-v-bdf3a066]:hover{\r\n  color: #ffffff;\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\r\n", ""]);
 
 // exports
 
@@ -7189,7 +7218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.images[data-v-916352e2] {\n  max-width: 200px;\n  max-height: 300px;\n}\n.gallery[data-v-916352e2] {\n    margin-bottom: 30px;\n    display: flex;\n    margin-top: auto;\n    justify-content: space-between;\n}\n.makedefault[data-v-916352e2]{\n  color: #ffffff;\n  position : relative;\n  display: block;\n  margin: 0 auto;\n  padding: 0;\n  width: 200px;\n  margin-top: 5px;\n  font-size: 15px;\n  background: rgba(154,83,254,0.5);\n}\n.btn[data-v-916352e2]:hover{\n  color: #ffffff;\n  background: rgba(154,83,254,1);\n}\n#filtre[data-v-916352e2]{\n  position:absolute;\n  width:179%;\n  left: -110px;\n  top: -110px;\n  background-color:black;\n  z-index:1;\n  min-height: 300%;\n}\n.imgModal[data-v-916352e2]{\n  position: relative;\n  max-width: 900px;\n  cursor: pointer;\n  z-index:2;\n  display: block;\n  margin: auto;\n  margin-top: 5em;\n  margin-bottom: 5em;\n}\n.fade-enter-active[data-v-916352e2], .fade-leave-active[data-v-916352e2] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-916352e2], .fade-leave-to[data-v-916352e2] /* .fade-leave-active in <2.1.8 */ {\n    transition: opacity .5s;\n}\n", ""]);
+exports.push([module.i, "\n.images[data-v-916352e2] {\r\n  max-width: 200px;\r\n  max-height: 300px;\n}\n.gallery[data-v-916352e2] {\r\n    margin-bottom: 30px;\r\n    display: flex;\r\n    margin-top: auto;\r\n    justify-content: space-between;\n}\n.makedefault[data-v-916352e2]{\r\n  color: #ffffff;\r\n  position : relative;\r\n  display: block;\r\n  margin: 0 auto;\r\n  padding: 0;\r\n  width: 200px;\r\n  margin-top: 5px;\r\n  font-size: 15px;\r\n  background: rgba(154,83,254,0.5);\n}\n.btn[data-v-916352e2]:hover{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,1);\n}\n#filtre[data-v-916352e2]{\r\n  position:absolute;\r\n  width:179%;\r\n  left: -110px;\r\n  top: -110px;\r\n  background-color:black;\r\n  z-index:1;\r\n  min-height: 300%;\n}\n.imgModal[data-v-916352e2]{\r\n  position: relative;\r\n  max-width: 900px;\r\n  cursor: pointer;\r\n  z-index:2;\r\n  display: block;\r\n  margin: auto;\r\n  margin-top: 5em;\r\n  margin-bottom: 5em;\n}\n.fade-enter-active[data-v-916352e2], .fade-leave-active[data-v-916352e2] {\r\n    transition: opacity .5s;\n}\n.fade-enter[data-v-916352e2], .fade-leave-to[data-v-916352e2] /* .fade-leave-active in <2.1.8 */ {\r\n    transition: opacity .5s;\n}\r\n", ""]);
 
 // exports
 
@@ -7227,7 +7256,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container[data-v-6d9153be]{\n    padding:10px;\n}\n.card-body[data-v-6d9153be]{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none;\n  width: auto;\n  height: 500px;\n}\n.imgCharac[data-v-6d9153be]{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.btn[data-v-6d9153be]{\n  color: #ffffff !important;\n}\n.buttons[data-v-6d9153be]{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\n.buttons>a[data-v-6d9153be]{\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n  width: 80px;\n}\n.buttons>a[data-v-6d9153be]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\nh2[data-v-6d9153be]{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\nmargin:5px 0;\n}\np[data-v-6d9153be]{\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.card-container[data-v-6d9153be]{\r\n    padding:10px;\n}\n.card-body[data-v-6d9153be]{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\r\n  max-width: none;\r\n  width: auto;\r\n  height: 500px;\n}\n.imgCharac[data-v-6d9153be]{\r\n  margin-bottom: 20px;\r\n  max-width: 150px !important;\n}\n.btn[data-v-6d9153be]{\r\n  color: #ffffff !important;\n}\n.buttons[data-v-6d9153be]{\r\n  display: flex;\r\n  margin-top: auto;\r\n  justify-content: space-between;\n}\n.buttons>a[data-v-6d9153be]{\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\r\n  width: 80px;\n}\n.buttons>a[data-v-6d9153be]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\nh2[data-v-6d9153be]{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\nmargin:5px 0;\n}\np[data-v-6d9153be]{\r\n  color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -7265,7 +7294,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.imgCharac[data-v-7bfedf28]{\n  max-height: 266px;\n  margin-bottom: 20px;\n}\n.card[data-v-7bfedf28]{\n  display: flex;\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n.cardBlog[data-v-7bfedf28]{\n  padding-top: 10%;\n}\n.card-body[data-v-7bfedf28]{\n  margin:9px;\n}\n.btn[data-v-7bfedf28]{\n  color: #ffffff !important;\n}\n.buttons[data-v-7bfedf28]{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n  margin-bottom: 20px;\n}\n.buttons>a[data-v-7bfedf28]{\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n  width: 100px;\n  padding: 0 auto !important;\n}\n.buttons>a[data-v-7bfedf28]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\nh1[data-v-7bfedf28]{\n  margin-left: 20px;\n  text-transform: uppercase;\n  font-size: 50px;\n}\n.description[data-v-7bfedf28]{\n  padding-top: 20px;\n}\n\n", ""]);
+exports.push([module.i, "\n.imgCharac[data-v-7bfedf28]{\r\n  max-height: 266px;\r\n  margin-bottom: 20px;\n}\n.card[data-v-7bfedf28]{\r\n  display: flex;\r\n  padding: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\n}\n.cardBlog[data-v-7bfedf28]{\r\n  padding-top: 10%;\n}\n.card-body[data-v-7bfedf28]{\r\n  margin:9px;\n}\n.btn[data-v-7bfedf28]{\r\n  color: #ffffff !important;\n}\n.buttons[data-v-7bfedf28]{\r\n  display: flex;\r\n  margin-top: auto;\r\n  justify-content: space-between;\r\n  margin-bottom: 20px;\n}\n.buttons>a[data-v-7bfedf28]{\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\r\n  width: 100px;\r\n  padding: 0 auto !important;\n}\n.buttons>a[data-v-7bfedf28]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\nh1[data-v-7bfedf28]{\r\n  margin-left: 20px;\r\n  text-transform: uppercase;\r\n  font-size: 50px;\n}\n.description[data-v-7bfedf28]{\r\n  padding-top: 20px;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -22301,6 +22330,106 @@ var render = function() {
         }),
         _c("br"),
         _vm._v(" "),
+        _c("label", { attrs: { for: "formInput" } }, [_vm._v("Size")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.size,
+              expression: "size"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", name: "house" },
+          domProps: { value: _vm.size },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.size = $event.target.value
+            }
+          }
+        }),
+        _c("br"),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "formInput" } }, [_vm._v("Weight")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.weight,
+              expression: "weight"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", name: "house" },
+          domProps: { value: _vm.weight },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.weight = $event.target.value
+            }
+          }
+        }),
+        _c("br"),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "formInput" } }, [_vm._v("Race")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.racerp,
+              expression: "racerp"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", name: "house" },
+          domProps: { value: _vm.racerp },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.racerp = $event.target.value
+            }
+          }
+        }),
+        _c("br"),
+        _vm._v(" "),
+        _c("label", { attrs: { for: "formInput" } }, [_vm._v("Age")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.age,
+              expression: "age"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text", name: "house" },
+          domProps: { value: _vm.age },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.age = $event.target.value
+            }
+          }
+        }),
+        _c("br"),
+        _vm._v(" "),
         _c("label", { attrs: { for: "formControlTextarea" } }, [
           _vm._v("DESCRIPTION")
         ]),
@@ -22728,23 +22857,43 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("p", { staticClass: "card-text text-left" }, [
-                _c("strong", [_vm._v("GENDER:")]),
+                _c("strong", [_vm._v("GENDER :")]),
                 _vm._v(" " + _vm._s(_vm.tab.gender))
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text text-left" }, [
-                _c("strong", [_vm._v("RACE:")]),
+                _c("strong", [_vm._v("FACTION :")]),
                 _vm._v(" " + _vm._s(_vm.tab.race))
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text text-left" }, [
-                _c("strong", [_vm._v("CLASS:")]),
+                _c("strong", [_vm._v("CLASS :")]),
                 _vm._v(" " + _vm._s(_vm.tab.player_class))
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text text-left" }, [
-                _c("strong", [_vm._v("HOUSE:")]),
+                _c("strong", [_vm._v("HOUSE :")]),
                 _vm._v(" " + _vm._s(_vm.tab.house))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text text-left" }, [
+                _c("strong", [_vm._v("AGE :")]),
+                _vm._v(" " + _vm._s(_vm.tab.age))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text text-left" }, [
+                _c("strong", [_vm._v("RACE :")]),
+                _vm._v(" " + _vm._s(_vm.tab.racerp))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text text-left" }, [
+                _c("strong", [_vm._v("SIZE :")]),
+                _vm._v(" " + _vm._s(_vm.tab.size))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text text-left" }, [
+                _c("strong", [_vm._v("WEIGHT :")]),
+                _vm._v(" " + _vm._s(_vm.tab.weight))
               ])
             ]
           )
@@ -37559,7 +37708,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MyCharacters_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/MyCharacters.vue */ "./resources/js/components/MyCharacters.vue");
 /* harmony import */ var _components_SearchCharacters_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/SearchCharacters.vue */ "./resources/js/components/SearchCharacters.vue");
 /* harmony import */ var _components_AccountFusion_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AccountFusion.vue */ "./resources/js/components/AccountFusion.vue");
-/* harmony import */ var _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ModifCharac.vue */ "./resources/js/components/ModifCharac.vue");
+/* harmony import */ var _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/ModifCharac.vue */ "./resources/js/components/ModifCharac.vue");
 /* harmony import */ var _components_ViewCharac_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ViewCharac.vue */ "./resources/js/components/ViewCharac.vue");
 /* harmony import */ var _components_GalleryCharac_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/GalleryCharac.vue */ "./resources/js/components/GalleryCharac.vue");
 /* harmony import */ var _components_BlogCharac_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/BlogCharac.vue */ "./resources/js/components/BlogCharac.vue");
@@ -37595,7 +37744,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   }, {
     path: '/aionGRP/modifcharac/:id',
     name: 'modifcharac',
-    component: _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_12__["default"]
   }, {
     path: '/aionGRP/viewcharac/:id',
     name: 'viewcharac',
@@ -38427,8 +38576,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
