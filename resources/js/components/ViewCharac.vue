@@ -138,6 +138,7 @@ export default {
 
 <style scoped>
 .imgCharac{
+  max-width: 266px;
   max-height: 266px;
   margin-bottom: 20px;
 }
