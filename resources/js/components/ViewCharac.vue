@@ -12,8 +12,8 @@
           </div>
           <div class="card text-center justify-content-center">
             <div class="btn-grp buttons">
-              <router-link v-bind:to="'/aionGRP/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-block btngallery">GALLERY</button></router-link>
-              <router-link v-bind:to="'/aionGRP/blogcharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-block btnblog">BLOG</button></router-link>
+              <router-link v-bind:to="'/aionGRP/index.php/gallerycharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-block btngallery">GALLERY</button></router-link>
+              <router-link v-bind:to="'/aionGRP/index.php/blogcharac/'+tab.character_id" style="color: #ffffff"><button type="button" class="btn btn-block btnblog">BLOG</button></router-link>
             </div>
             <p class="card-text text-left"><strong>GENDER :</strong> {{tab.gender}}</p>
             <p class="card-text text-left"><strong>FACTION :</strong> {{tab.race}}</p>
@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="buttonadd">
-              <router-link v-bind:to="'/aionGRP/blogpost/'+$route.params.id" style="color: #ffffff" v-if="verify"><button type="button" class="addpost btn">ADD POST</button></router-link>
+              <router-link v-bind:to="'/aionGRP/index.php/blogpost/'+$route.params.id" style="color: #ffffff" v-if="verify"><button type="button" class="addpost btn">ADD POST</button></router-link>
             </div>
           </div>
         </div>

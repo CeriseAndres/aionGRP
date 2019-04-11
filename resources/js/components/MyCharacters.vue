@@ -13,9 +13,9 @@
             <p class="card-text">{{perso.house}}</p>
             <p class="card-text">{{ perso.description | providerDescription}}</p>
             <div class="btn-grp buttons">
-              <router-link v-bind:to="'/aionGRP/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">EDIT</button></router-link>
-              <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">VIEW</button></router-link>
-              <router-link v-bind:to="'/aionGRP/blogcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">BLOG</button></router-link>
+              <router-link v-bind:to="'/aionGRP/index.php/modifcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">EDIT</button></router-link>
+              <router-link v-bind:to="'/aionGRP/index.php/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">VIEW</button></router-link>
+              <router-link v-bind:to="'/aionGRP/index.php/blogcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">BLOG</button></router-link>
             </div>
           </div>
         </div>

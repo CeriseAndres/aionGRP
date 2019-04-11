@@ -2,7 +2,7 @@
   <div class="container">
 
     <div class="buttonadd">
-      <router-link v-bind:to="'/aionGRP/blogpost/'+$route.params.id" style="color: #ffffff" v-if="verify"><button type="button" class="addpost btn">ADD POST</button></router-link>
+      <router-link v-bind:to="'/aionGRP/index.php/blogpost/'+$route.params.id" style="color: #ffffff" v-if="verify"><button type="button" class="addpost btn">ADD POST</button></router-link>
     </div>
 
     <div class="card" v-for="post in tab">
@@ -14,7 +14,7 @@
           </a>
         </div>
         <div class="buttonedit">
-          <router-link v-bind:to="'/aionGRP/blogedit/'+post.id" style="color: #ffffff" v-if="verify"><button type="button" class="editpost btn">EDIT</button></router-link>
+          <router-link v-bind:to="'/aionGRP/index.php/blogedit/'+post.id" style="color: #ffffff" v-if="verify"><button type="button" class="editpost btn">EDIT</button></router-link>
         </div>
       </div>
       <div class="collapse"  v-bind:id="'blog'+post.id">

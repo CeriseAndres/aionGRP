@@ -6,7 +6,7 @@
           <span class="input-group-text" id="basic-addon">Search</span>
         </div>
         <input type="text" v-model="clef" class="form-control" id="basic-url1" aria-describedby="basic-addon">
-        <button type="button" id="inputsearch" class="btn btn-block" v-on:click="search">Login</button>
+        <button type="button" id="inputsearch" class="btn btn-block" v-on:click="search">Search</button>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
           <p class="card-text">{{perso.house}}</p>
           <p class="card-text">{{ perso.description | providerDescription}}</p>
           <div id="bottom">
-            <router-link v-bind:to="'/aionGRP/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
+            <router-link v-bind:to="'/aionGRP/index.php/viewcharac/'+perso.character_id" style="color: #ffffff"><button type="button" class="btn btn-block">View</button></router-link>
           </div>
         </div>
       </div>

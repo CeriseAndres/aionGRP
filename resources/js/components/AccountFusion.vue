@@ -54,7 +54,7 @@ export default {
     methods: {
         takeList: function () {
             var self=this;
-
+                self.players=[];
                 self.api=api;
                 var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeAcc";
                 $.getJSON(url, function (data) {
@@ -87,7 +87,8 @@ export default {
                   //console.log(error);
               });
           self.takeList();
-
+        self.aionname="";
+        self.aionpass="";
         }
     },
     mounted() {
