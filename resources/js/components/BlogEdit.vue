@@ -33,28 +33,38 @@ export default {
   },
 
   methods: {
+      show: function(){
+        var self=this;
+          self.api=api;
+          var url= burl+"api.php?w=blog&name="+name+"&api="+self.api+"&v=selectOne&idblog="+self.$route.params.id;
+          $.getJSON(url, function (data) {
+              self.tab=data;
+              self.title=self.tab.title;
+              self.content=self.tab.content;
+              //console.log(data);
+          });
+      },
       editpost (){
         var self=this;
 
-          self.api=api;
-          var url=burl+'api.php?w=blog&v=modifyBlog&name='+name+'&api='+self.api+'&idblog='+self.$route.params.id;
-          axios.post(url, {
-            title: self.title,
-            data: self.content
-          })
-          .then((response) => {
-            console.log(response);
-            alert('posted');
-            self.$router.push({name: 'blogcharac', });
-          })
-          .catch(function (error) {
-                 console.log('erreur'+error);
-                 console.log(url);
-
-               });
+        self.api=api;
+        var url=burl+'api.php?w=blog&v=modifyBlog&name='+name+'&api='+self.api+'&idblog='+self.$route.params.id;
+        axios.post(url, {
+          title: self.title,
+          data: self.content
+        })
+        .then((response) => {
+          self.$router.go(-1);
+        })
+        .catch(function (error) {
+          //console.log('erreur'+error);
+        });
 
       },
 
+   },
+   mounted() {
+     this.show()
    }
 
 }

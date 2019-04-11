@@ -52,13 +52,9 @@ export default {
           axios.get(url)
           .then(function (response) {
             self.tab=response.data;
-                console.log(url);
-
           })
           .catch(function (error) {
-            console.log('erreur'+error);
-            console.log(url);
-
+            //console.log('erreur'+error);
           });
       },
       toggle: function(id) {
@@ -72,10 +68,9 @@ export default {
         axios.get(url)
                 .then(function (response) {
                   self.verify=response.data;
-                  console.log(response.data);
                 })
                 .catch(function (error) {
-                  console.log(error)
+                  //console.log(error)
                 })
       },
  },

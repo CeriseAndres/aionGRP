@@ -77,13 +77,11 @@ export default {
           var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=takeOne&id="+self.$route.params.id;
           $.getJSON(url, function (data) {
               self.tab=data;
-              console.log(data);
-
           });
 
       },
       takeTab: function(){
-        console.log(this.tab);
+        //console.log(this.tab);
       },
       selectTwo: function() {
         var self=this;
@@ -100,13 +98,9 @@ export default {
 
             }
             self.blog=blog;
-                console.log(self.blog);
-
           })
           .catch(function (error) {
-            console.log('erreur'+error);
-            console.log(url);
-
+            //console.log('erreur'+error);
           });
       },
       verifyismine: function(){
@@ -115,10 +109,9 @@ export default {
         axios.get(url)
                 .then(function (response) {
                   self.verify=response.data;
-                  console.log(response.data);
                 })
                 .catch(function (error) {
-                  console.log(error)
+                  //console.log(error)
                 })
       },
     },

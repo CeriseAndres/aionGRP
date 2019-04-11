@@ -43,14 +43,11 @@ export default {
             data: self.content
           })
           .then((response) => {
-            console.log(response);
-            alert('posted');
+            self.$router.go(-1);
           })
           .catch(function (error) {
-                 console.log('erreur'+error);
-                 console.log(url);
-
-               });
+            //console.log('erreur'+error);
+          });
 
       },
 

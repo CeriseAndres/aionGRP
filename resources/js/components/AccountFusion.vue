@@ -61,7 +61,7 @@ export default {
                     self.tab=data;
                     for (var i=0; i<self.tab.length;i++){
                      var url= burl+"api.php?w=getAcc&name="+name+"&api="+self.api+"&id="+self.tab[i][0];
-                     console.log(url);
+                     //console.log(url);
                      $.getJSON(url, function (data) {
                          self.players.push(data);
                      })
@@ -71,24 +71,22 @@ export default {
 
         },
         getplayers: function () {
-            console.log(this.players);
+            //console.log(this.players);
         },
         link: function () {
-            var self=this;
+          var self=this;
 
-                var url= burl+"api.php?w=account&name="+name+"&api="+api;
-                var arr={user: self.aionname,password: self.aionpass};
-                console.log(url);
+          var url= burl+"api.php?w=account&name="+name+"&api="+api;
+          var arr={user: self.aionname,password: self.aionpass};
 
-                axios.post(url, arr)
-                    .then(function (response) {
-                        console.log(response);
-                    })
-                    .catch(function (error) {
-                        console.log(error);
-                    });
-                console.log('ok');
-                self.takeList();
+          axios.post(url, arr)
+              .then(function (response) {
+                  //console.log(response);
+              })
+              .catch(function (error) {
+                  //console.log(error);
+              });
+          self.takeList();
 
         }
     },

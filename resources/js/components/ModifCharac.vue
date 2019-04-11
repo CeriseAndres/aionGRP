@@ -81,7 +81,6 @@ export default {
               dataType: 'json',
               async: true,
               success: function(msg) {
-                console.log('ok');
                 alert('change accepted');
               }
           });
@@ -90,7 +89,6 @@ export default {
       },
       test: function (e) {
         var self=this;
-        console.log('etape1');
          e.preventDefault();
          let formData = new FormData();
          formData.append('image', self.image);
@@ -100,15 +98,12 @@ export default {
           let url=burl+"api.php?w=blog&v=imgsend&name="+name+"&api="+self.api+'&id='+self.$route.params.id;
          axios.post(url, formData, config)
          .then(function (response) {
-               console.log('marche'+response.data.success);
-               alert('image uploaded');
-               self.emptyImage();
-             })
-            .catch(function (error) {
-                   console.log('erreur'+error);
-                   console.log(url);
-
-                 });
+             alert('image uploaded');
+             self.emptyImage();
+          })
+          .catch(function (error) {
+            //console.log('erreur'+error);
+          });
 
       },
       show: function(){
@@ -124,14 +119,12 @@ export default {
               self.racerp=self.tab.racerp;
               self.size=self.tab.size;
               self.weight=self.tab.weight;
-              console.log(data);
+              //console.log(data);
           });
-
-
       },
       onImageChange: function(e){
         var self=this;
-        console.log(e.target.files[0]);
+        //console.log(e.target.files[0]);
         self.image = e.target.files[0];
         let reader  = new FileReader();
         reader.addEventListener("load", function () {

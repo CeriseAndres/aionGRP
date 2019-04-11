@@ -48,12 +48,12 @@
       search: function() {
         var self=this;
 
-          self.api=api;
-          var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=search&type=name&clef="+self.clef;
-          $.getJSON(url, function (data) {
-            self.tab=data;
-            console.log(data);
-          });
+        self.api=api;
+        var url= burl+"api.php?w=personnage&name="+name+"&api="+self.api+"&v=search&type=name&clef="+self.clef;
+        $.getJSON(url, function (data) {
+          self.tab=data;
+          //console.log(data);
+        });
 
       }
     },

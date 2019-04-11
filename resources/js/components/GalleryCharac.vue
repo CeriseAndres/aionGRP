@@ -50,26 +50,24 @@ export default {
           axios.get(url)
           .then(function (response) {
             self.tab=response.data;
-                console.log(self.tab);
-              })
-             .catch(function (error) {
-                    console.log('erreur'+error);
-                    console.log(url);
-
-                  });
+              //console.log(self.tab);
+          })
+          .catch(function (error) {
+              //console.log('erreur'+error);
+          });
 
       },
       verifyismine: function(){
         var self=this;
         var url=burl+"api.php?w=personnage&v=verifyismine&name="+name+"&api="+self.api+"&idchar="+self.$route.params.id;
         axios.get(url)
-                .then(function (response) {
-                  self.verify=response.data;
-                  console.log(response.data);
-                })
-                .catch(function (error) {
-                  console.log(error)
-                })
+        .then(function (response) {
+          self.verify=response.data;
+          //console.log(response.data);
+        })
+        .catch(function (error) {
+          //console.log(error)
+        })
       },
       toggle: function(id) {
    			this.show = id;
@@ -93,14 +91,12 @@ export default {
           var url= burl+"api.php?w=blog&v=makedef&name="+name+"&api="+self.api+'&idchar='+self.$route.params.id+'&id='+idimg;
           axios.get(url)
           .then(function (response) {
-                console.log(response);
-                alert('done');
-              })
-             .catch(function (error) {
-                    console.log('erreur'+error);
-                    console.log(url);
-
-                  });
+            //console.log(response);
+            self.$router.push({name: 'viewcharac'});
+          })
+         .catch(function (error) {
+            //console.log('erreur'+error);
+          });
 
       },
     },
