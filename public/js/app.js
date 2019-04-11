@@ -1913,6 +1913,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2138,7 +2139,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       tab: [],
       api: "",
-      show: false
+      show: false,
+      verify: false
     };
   },
   methods: {
@@ -2152,6 +2154,16 @@ __webpack_require__.r(__webpack_exports__);
       }).catch(function (error) {
         console.log('erreur' + error);
         console.log(url);
+      });
+    },
+    verifyismine: function verifyismine() {
+      var self = this;
+      var url = burl + "api.php?w=personnage&v=verifyismine&name=" + name + "&api=" + self.api + "&idchar=" + self.$route.params.id;
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get(url).then(function (response) {
+        self.verify = response.data;
+        console.log(response.data);
+      }).catch(function (error) {
+        console.log(error);
       });
     },
     toggle: function toggle(id) {
@@ -2184,6 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.imgtakeall();
+    this.verifyismine();
   }
 });
 
@@ -7041,7 +7054,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\np{\n    color:white;\n}\n.fusion{\n        display: inline-flex;\n}\n.fusion>ul{\n        display: inline-flex;\n        list-style-type: none;\n}\n.form-control{\n        width: auto !important;\n}\n#inputfusion{\n        height: 100px;\n        margin: auto;\n        margin-top:3.8em;\n}\n", ""]);
+exports.push([module.i, "\np{\r\n    color:white;\n}\n.fusion{\r\n        display: inline-flex;\n}\n.fusion>ul{\r\n        display: inline-flex;\r\n        list-style-type: none;\n}\n.form-control{\r\n        width: auto !important;\n}\n#inputfusion{\r\n        height: 100px;\r\n        margin: auto;\r\n        margin-top:3.8em;\n}\r\n", ""]);
 
 // exports
 
@@ -7060,7 +7073,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.container[data-v-be4d0836]{\n  display: flex;\n  flex-direction: column;\n}\n.buttonadd[data-v-be4d0836]{\n  position: relative;\n  margin: 0 auto;\n  margin-bottom: 20px;\n}\n.card[data-v-be4d0836]{\n  margin-bottom: 20px;\n}\n.card-link[data-v-be4d0836]{\n  cursor: pointer;\n}\nh4[data-v-be4d0836]{\n  text-transform: uppercase;\n  color:black;\n}\n", ""]);
+exports.push([module.i, "\n.container[data-v-be4d0836]{\r\n  display: flex;\r\n  flex-direction: column;\n}\n.blog-header[data-v-be4d0836]{\r\n  display: inline-flex;\n}\n.blog-header>div[data-v-be4d0836]:last-child{\r\n  margin-left: auto;\n}\n.buttonadd[data-v-be4d0836]{\r\n  position: relative;\r\n  margin: 0 auto;\r\n  margin-bottom: 20px;\n}\n.card[data-v-be4d0836]{\r\n  margin-bottom: 20px;\n}\n.card-link[data-v-be4d0836]{\r\n  cursor: pointer;\n}\nh4[data-v-be4d0836]{\r\n  text-transform: uppercase;\r\n  color:black;\n}\r\n", ""]);
 
 // exports
 
@@ -7079,7 +7092,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.form-group[data-v-59377f92]{\n  display: flex;\n  flex-direction: column;\n}\nh1[data-v-59377f92]{\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.form-group[data-v-59377f92]{\r\n  display: flex;\r\n  flex-direction: column;\n}\nh1[data-v-59377f92]{\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 
@@ -7098,7 +7111,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.form-group[data-v-bdf3a066]{\n  display: flex;\n  flex-direction: column;\n}\nh1[data-v-bdf3a066]{\n  text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.form-group[data-v-bdf3a066]{\r\n  display: flex;\r\n  flex-direction: column;\n}\nh1[data-v-bdf3a066]{\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 
@@ -7117,7 +7130,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.images {\n  max-width: 200px;\n  max-height: 300px;\n}\n.gallery {\n    margin-bottom: 30px;\n    display: flex;\n    margin-top: auto;\n    justify-content: space-between;\n}\n.content>a {\n\t\tmargin:  auto;\n\t\tborder: none;\n\t\tpadding: 10px;\n\t\tcursor: pointer;\n}\n#filtre{\n  position:absolute;\n  width:179%;\n  left: -110px;\n  top: -110px;\n  background-color:black;\n  z-index:1;\n  min-height: 300%;\n}\n.imgModal{\n  position: relative;\n  max-width: 900px;\n  cursor: pointer;\n  z-index:2;\n  display: block;\n  margin: auto;\n  margin-top: 5em;\n  margin-bottom: 5em;\n}\n.makedefault{\n  position : relative;\n  display: block;\n  margin: 0 auto !important;\n  padding: 0 !important;\n  background: rgba(154,83,254,0.5);\n  width: 200px;\n  margin-top: 5px !important;\n  font-size: 15px !important;\n}\n.fade-enter-active, .fade-leave-active {\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\n    transition: opacity .5s;\n}\n", ""]);
+exports.push([module.i, "\n.images {\r\n  max-width: 200px;\r\n  max-height: 300px;\n}\n.gallery {\r\n    margin-bottom: 30px;\r\n    display: flex;\r\n    margin-top: auto;\r\n    justify-content: space-between;\n}\n.content>a {\r\n\t\tmargin:  auto;\r\n\t\tborder: none;\r\n\t\tpadding: 10px;\r\n\t\tcursor: pointer;\n}\n#filtre{\r\n  position:absolute;\r\n  width:179%;\r\n  left: -110px;\r\n  top: -110px;\r\n  background-color:black;\r\n  z-index:1;\r\n  min-height: 300%;\n}\n.imgModal{\r\n  position: relative;\r\n  max-width: 900px;\r\n  cursor: pointer;\r\n  z-index:2;\r\n  display: block;\r\n  margin: auto;\r\n  margin-top: 5em;\r\n  margin-bottom: 5em;\n}\n.makedefault{\r\n  position : relative;\r\n  display: block;\r\n  margin: 0 auto !important;\r\n  padding: 0 !important;\r\n  background: rgba(154,83,254,0.5);\r\n  width: 200px;\r\n  margin-top: 5px !important;\r\n  font-size: 15px !important;\n}\n.fade-enter-active, .fade-leave-active {\r\n    transition: opacity .5s;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {\r\n    transition: opacity .5s;\n}\r\n", ""]);
 
 // exports
 
@@ -7155,7 +7168,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container{\n    padding:10px;\n}\n.card-body{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none !important;\n  width: auto !important;\n  height: 500px !important;\n}\n.btnchange {\n  position : relative;\n  z-index : 2;\n  width: 50px;\n  background: rgba(154,83,254,0.5) !important;\n  font-size: 12px;\n  padding: 0;\n  top: -44px;\n}\n.imgCharac{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n}\n.buttons>a{\n  width: 80px;\n}\n.buttons{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\nh2{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\nmargin:5px 0;\n}\np{\n  width:100%;\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.card-container{\r\n    padding:10px;\n}\n.card-body{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\r\n  max-width: none !important;\r\n  width: auto !important;\r\n  height: 500px !important;\n}\n.btnchange {\r\n  position : relative;\r\n  z-index : 2;\r\n  width: 50px;\r\n  background: rgba(154,83,254,0.5) !important;\r\n  font-size: 12px;\r\n  padding: 0;\r\n  top: -44px;\n}\n.imgCharac{\r\n  margin-bottom: 20px;\r\n  max-width: 150px !important;\n}\n.buttons>a{\r\n  width: 80px;\n}\n.buttons{\r\n  display: flex;\r\n  margin-top: auto;\r\n  justify-content: space-between;\n}\nh2{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\nmargin:5px 0;\n}\np{\r\n  width:100%;\r\n  color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -7193,7 +7206,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.traits {\n  position: relative;\n  margin-top: 20px;\n  margin-bottom: 20px;\n}\n.imgCharac{\n  max-height: 266px\n}\n.traits>a {\n  z-index: 1;\n  position: absolute;\n  top: 5px;\n  right: 105px;\n}\n.btngallery {\n  position : relative;\n  z-index : 2;\n  width: 100px;\n  left: 100px;\n  background: rgba(154,83,254,0.5);\n}\n.card{\n  display: flex;\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n\n", ""]);
+exports.push([module.i, "\n.traits {\r\n  position: relative;\r\n  margin-top: 20px;\r\n  margin-bottom: 20px;\n}\n.imgCharac{\r\n  max-height: 266px\n}\n.traits>a {\r\n  z-index: 1;\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 105px;\n}\n.btngallery {\r\n  position : relative;\r\n  z-index : 2;\r\n  width: 100px;\r\n  left: 100px;\r\n  background: rgba(154,83,254,0.5);\n}\n.card{\r\n  display: flex;\r\n  padding: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -21755,7 +21768,7 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.tab, function(post) {
         return _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
+          _c("div", { staticClass: "card-header blog-header" }, [
             _c("div", { staticClass: "title" }, [
               _c(
                 "a",
@@ -21773,7 +21786,32 @@ var render = function() {
                   _c("h5", [_vm._v(_vm._s(post.date_post))])
                 ]
               )
-            ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "buttonedit" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticStyle: { color: "#ffffff" },
+                    attrs: { to: "/aionGRP/blogedit/" + post.id }
+                  },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "editpost btn",
+                        attrs: { type: "button" }
+                      },
+                      [_vm._v("Edit")]
+                    )
+                  ]
+                )
+              ],
+              1
+            )
           ]),
           _vm._v(" "),
           _c(
@@ -21783,32 +21821,7 @@ var render = function() {
               _c("div", { staticClass: "card-body" }, [
                 _c("p", { staticClass: "card-text" }, [
                   _vm._v(" " + _vm._s(post.content) + " ")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "buttonadd" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticStyle: { color: "#ffffff" },
-                        attrs: { to: "/aionGRP/blogedit/" + post.id }
-                      },
-                      [
-                        _c(
-                          "button",
-                          {
-                            staticClass: "editpost btn",
-                            attrs: { type: "button" }
-                          },
-                          [_vm._v("Edit")]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
+                ])
               ])
             ]
           )
@@ -22073,18 +22086,20 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "makedefault btn btn-lg",
-                    on: {
-                      click: function($event) {
-                        return _vm.changeAvatar(image.id)
-                      }
-                    }
-                  },
-                  [_vm._v("make default")]
-                )
+                _vm.verify
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "makedefault btn btn-lg",
+                        on: {
+                          click: function($event) {
+                            return _vm.changeAvatar(image.id)
+                          }
+                        }
+                      },
+                      [_vm._v("make default")]
+                    )
+                  : _vm._e()
               ])
             ]
           )
@@ -37472,7 +37487,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MyCharacters_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/MyCharacters.vue */ "./resources/js/components/MyCharacters.vue");
 /* harmony import */ var _components_SearchCharacters_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/SearchCharacters.vue */ "./resources/js/components/SearchCharacters.vue");
 /* harmony import */ var _components_AccountFusion_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AccountFusion.vue */ "./resources/js/components/AccountFusion.vue");
-/* harmony import */ var _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ModifCharac.vue */ "./resources/js/components/ModifCharac.vue");
+/* harmony import */ var _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/ModifCharac.vue */ "./resources/js/components/ModifCharac.vue");
 /* harmony import */ var _components_ViewCharac_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ViewCharac.vue */ "./resources/js/components/ViewCharac.vue");
 /* harmony import */ var _components_GalleryCharac_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/GalleryCharac.vue */ "./resources/js/components/GalleryCharac.vue");
 /* harmony import */ var _components_BlogCharac_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/BlogCharac.vue */ "./resources/js/components/BlogCharac.vue");
@@ -37508,7 +37523,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   }, {
     path: '/aionGRP/modifcharac/:id',
     name: 'modifcharac',
-    component: _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _components_ModifCharac_vue__WEBPACK_IMPORTED_MODULE_12__["default"]
   }, {
     path: '/aionGRP/viewcharac/:id',
     name: 'viewcharac',
@@ -38340,8 +38355,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -7,7 +7,7 @@
             <img class="images img-responsive center-block" v-bind:src="'/aionGRP/'+image.img_path">
 
           </a>
-          <a v-on:click="changeAvatar(image.id)" class="makedefault btn btn-lg">make default</a>
+          <a v-on:click="changeAvatar(image.id)" v-if="verify" class="makedefault btn btn-lg">make default</a>
         </div>
       </div>
     </div>
@@ -37,7 +37,8 @@ export default {
     return {
       tab:[],
       api:"",
-      show: false
+      show: false,
+      verify:false,
     }
   },
   methods: {
@@ -57,6 +58,18 @@ export default {
 
                   });
 
+      },
+      verifyismine: function(){
+        var self=this;
+        var url=burl+"api.php?w=personnage&v=verifyismine&name="+name+"&api="+self.api+"&idchar="+self.$route.params.id;
+        axios.get(url)
+                .then(function (response) {
+                  self.verify=response.data;
+                  console.log(response.data);
+                })
+                .catch(function (error) {
+                  console.log(error)
+                })
       },
       toggle: function(id) {
    			this.show = id;
@@ -93,7 +106,8 @@ export default {
     },
 
    mounted() {
-     this.imgtakeall()
+     this.imgtakeall();
+     this.verifyismine();
    },
 }
 </script>

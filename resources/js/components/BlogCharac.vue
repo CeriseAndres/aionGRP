@@ -6,20 +6,21 @@
     </div>
 
     <div class="card" v-for="post in tab">
-      <div class="card-header" >
+      <div class="card-header blog-header" >
         <div class="title">
           <a  class="card-link" v-on:click="toggle('blog'+post.id)">
             <h4>{{post.title}}</h4>
             <h5>{{post.date_post}}</h5>
           </a>
         </div>
+        <div class="buttonedit">
+          <router-link v-bind:to="'/aionGRP/blogedit/'+post.id" style="color: #ffffff"><button type="button" class="editpost btn">Edit</button></router-link>
+        </div>
       </div>
       <div class="collapse"  v-bind:id="'blog'+post.id">
         <div class="card-body" >
           <p class="card-text"> {{post.content}} </p>
-          <div class="buttonadd">
-            <router-link v-bind:to="'/aionGRP/blogedit/'+post.id" style="color: #ffffff"><button type="button" class="editpost btn">Edit</button></router-link>
-          </div>
+
         </div>
       </div>
     </div>
@@ -80,6 +81,12 @@ export default {
 .container{
   display: flex;
   flex-direction: column;
+}
+.blog-header{
+  display: inline-flex;
+}
+.blog-header>div:last-child{
+  margin-left: auto;
 }
 .buttonadd{
   position: relative;
