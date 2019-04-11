@@ -36,6 +36,9 @@
                 <p class="card-text"> {{post.content | providerContent}} </p>
               </div>
             </div>
+            <div class="buttonadd">
+              <router-link v-bind:to="'/aionGRP/blogpost/'+$route.params.id" style="color: #ffffff" v-if="verify"><button type="button" class="addpost btn">ADD POST</button></router-link>
+            </div>
           </div>
         </div>
       </div>
@@ -61,7 +64,8 @@ export default {
       tab:"",
       api:"",
       blog:[],
-      providerContent :""
+      providerContent :"",
+      verify:false,
     }
   },
 
@@ -105,6 +109,18 @@ export default {
 
           });
       },
+      verifyismine: function(){
+        var self=this;
+        var url=burl+"api.php?w=personnage&v=verifyismine&name="+name+"&api="+self.api+"&idchar="+self.$route.params.id;
+        axios.get(url)
+                .then(function (response) {
+                  self.verify=response.data;
+                  console.log(response.data);
+                })
+                .catch(function (error) {
+                  console.log(error)
+                })
+      },
     },
     filters: {
          providerContent: function(value) {
@@ -120,9 +136,9 @@ export default {
      },
 
    mounted() {
-     this.takeOne()
+     this.takeOne();
      this.selectTwo();
-
+     this.verifyismine();
    },
 }
 </script>
@@ -146,7 +162,18 @@ export default {
   margin:9px;
 }
 .btn{
-  color: #ffffff !important;
+  color: #ffffff;
+  background: rgba(154,83,254,0.5);
+  border-radius:3px;
+}
+.btn:hover{
+  text-decoration: none;
+  background: rgba(154,83,254,1);
+}
+.buttonadd{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .buttons{
   display: flex;

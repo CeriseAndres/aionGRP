@@ -69,13 +69,13 @@ console.log(ert.length);
 
         <div id="app">
             <h3>Character Sheet</h3>
-          <nav class="navapp">
+            <nav class="navapp">
               <ul>
-                  <li> <router-link to="/aionGRP/mycharacters">My Characters</router-link></li>
-                  <li>  <router-link to="/aionGRP/searchcharacters">Search Characters</router-link></li>
-                  <li> <router-link to="/aionGRP/accountfusion">Account Fusion</router-link></li>
+                  <li> <router-link to="/aionGRP/mycharacters"><button type="button" class="btn btn-map">My Characters</button></router-link></li>
+                  <li>  <router-link to="/aionGRP/searchcharacters"><button type="button" class="btn btn-map">Search Characters</button></router-link></li>
+                  <li> <router-link to="/aionGRP/accountfusion"><button type="button" class="btn btn-map">Import Characters</button></router-link></li>
               </ul>
-          </nav>
+            </nav>
           <router-view></router-view>
         </div>
 
