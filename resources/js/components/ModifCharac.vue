@@ -132,14 +132,10 @@ export default {
 }
 </script>
 
-<<<<<<< HEAD
-<style>
-=======
 <style scoped>
   body{
       overflow-wrap: break-word;
   }
->>>>>>> a89cfd7f80c758a2e84aca316dff898165921aeb
   .form-control{
     padding: 1px;
     width: 100% !important;
