@@ -96,6 +96,7 @@ export default {
 .imgCharac{
   margin-bottom: 20px;
   max-width: 150px !important;
+  max-height: 200px;
 }
 .btn{
   color: #ffffff !important;
