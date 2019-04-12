@@ -18,47 +18,52 @@ const router = new VueRouter({
     mode: 'history',
     routes: [
         {
-            path:'/aionGRP/mycharacters',
+            path:'/aionGRP/index.php',
             name: 'mycharacters',
             component: MyCharacters,
         },
         {
-            path:'/aionGRP/searchcharacters',
+            path:'/aionGRP/index.php/mycharacters',
+            name: 'mycharacters',
+            component: MyCharacters,
+        },
+        {
+            path:'/aionGRP/index.php/searchcharacters',
             name: 'searchcharacters',
             component: SearchCharacters,
         },
         {
-            path:'/aionGRP/accountfusion',
+            path:'/aionGRP/index.php/accountfusion',
             name: 'accountfusion',
             component: AccountFusion,
         },
         {
-            path:'/aionGRP/modifcharac/:id',
+            path:'/aionGRP/index.php/modifcharac/:id',
             name: 'modifcharac',
             component: ModifCharac,
         },
         {
-            path:'/aionGRP/viewcharac/:id',
+            path:'/aionGRP/index.php/viewcharac/:id',
             name: 'viewcharac',
             component: ViewCharac,
         },
         {
-            path:'/aionGRP/gallerycharac/:id',
+            path:'/aionGRP/index.php/gallerycharac/:id',
             name: 'gallerycharac',
             component: GalleryCharac,
         },
         {
-            path:'/aionGRP/blogcharac/:id',
+            path:'/aionGRP/index.php/blogcharac/:id',
             name: 'blogcharac',
             component: BlogCharac,
         },
         {
-            path:'/aionGRP/blogpost/:id',
+            path:'/aionGRP/index.php/blogpost/:id',
             name: 'blogpost',
             component: BlogPost,
         },
         {
-            path:'/aionGRP/blogedit/:id',
+            path:'/aionGRP/index.php/blogedit/:id',
             name: 'blogedit',
             component: BlogEdit,
         },

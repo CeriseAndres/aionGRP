@@ -136,12 +136,12 @@ export default {
 }
 #filtre{
   position:absolute;
-  width:179%;
-  left: -110px;
-  top: -110px;
+  width:250%;
+  left: -210px;
+  top: -250px;
   background-color:black;
   z-index:1;
-  min-height: 300%;
+  min-height: 500%;
 }
 .imgModal{
   position: relative;
