@@ -91,7 +91,7 @@ export default {
   background: rgba(154,83,254,0.5);
   max-width: none;
   width: auto;
-  height: 500px;
+  height: 600px;
 }
 .imgCharac{
   margin-bottom: 20px;

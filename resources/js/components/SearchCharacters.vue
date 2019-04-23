@@ -91,7 +91,7 @@
     background: rgba(154,83,254,0.5);
     max-width: none !important;
     width: auto !important;
-    height: 500px !important;
+    height: 600px !important;
   }
   h2{
     width:95%;
