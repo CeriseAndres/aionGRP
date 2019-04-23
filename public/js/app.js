@@ -7135,7 +7135,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\np[data-v-3a449094]{\r\n    color:white;\n}\n.fusion[data-v-3a449094]{\r\n    display: inline-flex;\n}\n.fusion>ul[data-v-3a449094]{\r\n    display: inline-flex;\r\n    list-style-type: none;\n}\n.form-control[data-v-3a449094]{\r\n    width: auto !important;\n}\n#inputfusion[data-v-3a449094]{\r\n    height: 100px;\r\n    margin: auto;\r\n    margin-top:3.8em;\n}\n#basic-addon[data-v-3a449094]{\r\n  background: rgba(154,83,254,1);\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  height: 38px;\n}\n#basic-addon3[data-v-3a449094]{\r\n  background: rgba(154,83,254,1);\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\r\n  height: 38px;\n}\n.btn[data-v-3a449094]{\r\n  display: inline-block;\r\n  text-decoration: none !important;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\r\n  width: 80px;\r\n  color: #ffffff !important;\r\n  text-transform: uppercase;\n}\n.btn[data-v-3a449094]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\r\n", ""]);
+exports.push([module.i, "\np[data-v-3a449094]{\n    color:white;\n}\n.fusion[data-v-3a449094]{\n    display: inline-flex;\n}\n.fusion>ul[data-v-3a449094]{\n    display: inline-flex;\n    list-style-type: none;\n}\n.form-control[data-v-3a449094]{\n    width: auto !important;\n}\n#inputfusion[data-v-3a449094]{\n    height: 100px;\n    margin: auto;\n    margin-top:3.8em;\n}\n#basic-addon[data-v-3a449094]{\n  background: rgba(154,83,254,1);\n  color: #ffffff !important;\n  text-transform: uppercase;\n  height: 38px;\n}\n#basic-addon3[data-v-3a449094]{\n  background: rgba(154,83,254,1);\n  color: #ffffff !important;\n  text-transform: uppercase;\n  height: 38px;\n}\n.btn[data-v-3a449094]{\n  display: inline-block;\n  text-decoration: none !important;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n  width: 80px;\n  color: #ffffff !important;\n  text-transform: uppercase;\n}\n.btn[data-v-3a449094]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n", ""]);
 
 // exports
 
@@ -7154,7 +7154,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.container[data-v-be4d0836]{\r\n  display: flex;\r\n  flex-direction: column;\n}\n.blog-header[data-v-be4d0836]{\r\n  display: inline-flex;\n}\n.blog-header>div[data-v-be4d0836]:last-child{\r\n  margin-left: auto;\n}\n.card[data-v-be4d0836]{\r\n  margin-bottom: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\n}\n.card-link[data-v-be4d0836]{\r\n  cursor: pointer;\n}\nh4[data-v-be4d0836]{\r\n  text-transform: uppercase;\r\n  color:black;\n}\n.btn[data-v-be4d0836]{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\n}\n.btn[data-v-be4d0836]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\n.buttonadd[data-v-be4d0836]{\r\n  position: relative;\r\n  margin: 0 auto;\r\n  margin-bottom: 20px;\n}\r\n", ""]);
+exports.push([module.i, "\n.container[data-v-be4d0836]{\n  display: flex;\n  flex-direction: column;\n}\n.blog-header[data-v-be4d0836]{\n  display: inline-flex;\n}\n.blog-header>div[data-v-be4d0836]:last-child{\n  margin-left: auto;\n}\n.card[data-v-be4d0836]{\n  margin-bottom: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n.card-link[data-v-be4d0836]{\n  cursor: pointer;\n}\nh4[data-v-be4d0836]{\n  text-transform: uppercase;\n  color:black;\n}\n.btn[data-v-be4d0836]{\n  color: #ffffff;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n}\n.btn[data-v-be4d0836]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n.buttonadd[data-v-be4d0836]{\n  position: relative;\n  margin: 0 auto;\n  margin-bottom: 20px;\n}\n", ""]);
 
 // exports
 
@@ -7173,7 +7173,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.form-group[data-v-59377f92]{\r\n  display: flex;\r\n  flex-direction: column;\n}\nh1[data-v-59377f92]{\r\n  text-align: center;\n}\n.btn[data-v-59377f92]{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\n}\n.btn[data-v-59377f92]:hover{\r\n  color: #ffffff;\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\r\n", ""]);
+exports.push([module.i, "\n.form-group[data-v-59377f92]{\n  display: flex;\n  flex-direction: column;\n}\nh1[data-v-59377f92]{\n  text-align: center;\n}\n.btn[data-v-59377f92]{\n  color: #ffffff;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n}\n.btn[data-v-59377f92]:hover{\n  color: #ffffff;\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n", ""]);
 
 // exports
 
@@ -7192,7 +7192,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.form-group[data-v-bdf3a066]{\r\n  display: flex;\r\n  flex-direction: column;\n}\nh1[data-v-bdf3a066]{\r\n  text-align: center;\n}\n.btn[data-v-bdf3a066]{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\n}\n.btn[data-v-bdf3a066]:hover{\r\n  color: #ffffff;\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\r\n", ""]);
+exports.push([module.i, "\n.form-group[data-v-bdf3a066]{\n  display: flex;\n  flex-direction: column;\n}\nh1[data-v-bdf3a066]{\n  text-align: center;\n}\n.btn[data-v-bdf3a066]{\n  color: #ffffff;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n}\n.btn[data-v-bdf3a066]:hover{\n  color: #ffffff;\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n", ""]);
 
 // exports
 
@@ -7211,7 +7211,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.images[data-v-916352e2] {\r\n  max-width: 200px;\r\n  max-height: 300px;\n}\n.gallery[data-v-916352e2] {\r\n    margin-bottom: 30px;\r\n    display: flex;\r\n    margin-top: auto;\r\n    justify-content: space-between;\n}\n.makedefault[data-v-916352e2]{\r\n  color: #ffffff;\r\n  position : relative;\r\n  display: block;\r\n  margin: 0 auto;\r\n  padding: 0;\r\n  width: 200px;\r\n  margin-top: 5px;\r\n  font-size: 15px;\r\n  background: rgba(154,83,254,0.5);\n}\n.btn[data-v-916352e2]:hover{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,1);\n}\n#filtre[data-v-916352e2]{\r\n  position:absolute;\r\n  width:250%;\r\n  left: -210px;\r\n  top: -250px;\r\n  background-color:black;\r\n  z-index:1;\r\n  min-height: 500%;\n}\n.imgModal[data-v-916352e2]{\r\n  position: relative;\r\n  max-width: 900px;\r\n  cursor: pointer;\r\n  z-index:2;\r\n  display: block;\r\n  margin: auto;\r\n  margin-top: 5em;\r\n  margin-bottom: 5em;\n}\n.fade-enter-active[data-v-916352e2], .fade-leave-active[data-v-916352e2] {\r\n    transition: opacity .5s;\n}\n.fade-enter[data-v-916352e2], .fade-leave-to[data-v-916352e2] /* .fade-leave-active in <2.1.8 */ {\r\n    transition: opacity .5s;\n}\r\n", ""]);
+exports.push([module.i, "\n.images[data-v-916352e2] {\n  max-width: 200px;\n  max-height: 300px;\n}\n.gallery[data-v-916352e2] {\n    margin-bottom: 30px;\n    display: flex;\n    margin-top: auto;\n    justify-content: space-between;\n}\n.makedefault[data-v-916352e2]{\n  color: #ffffff;\n  position : relative;\n  display: block;\n  margin: 0 auto;\n  padding: 0;\n  width: 200px;\n  margin-top: 5px;\n  font-size: 15px;\n  background: rgba(154,83,254,0.5);\n}\n.btn[data-v-916352e2]:hover{\n  color: #ffffff;\n  background: rgba(154,83,254,1);\n}\n#filtre[data-v-916352e2]{\n  position:absolute;\n  width:250%;\n  left: -210px;\n  top: -250px;\n  background-color:black;\n  z-index:1;\n  min-height: 500%;\n}\n.imgModal[data-v-916352e2]{\n  position: relative;\n  max-width: 900px;\n  cursor: pointer;\n  z-index:2;\n  display: block;\n  margin: auto;\n  margin-top: 5em;\n  margin-bottom: 5em;\n}\n.fade-enter-active[data-v-916352e2], .fade-leave-active[data-v-916352e2] {\n    transition: opacity .5s;\n}\n.fade-enter[data-v-916352e2], .fade-leave-to[data-v-916352e2] /* .fade-leave-active in <2.1.8 */ {\n    transition: opacity .5s;\n}\n", ""]);
 
 // exports
 
@@ -7249,7 +7249,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-container[data-v-6d9153be]{\r\n    padding:10px;\n}\n.card-body[data-v-6d9153be]{\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\r\n  max-width: none;\r\n  width: auto;\r\n  height: 500px;\n}\n.imgCharac[data-v-6d9153be]{\r\n  margin-bottom: 20px;\r\n  max-width: 150px !important;\n}\n.btn[data-v-6d9153be]{\r\n  color: #ffffff !important;\n}\n.buttons[data-v-6d9153be]{\r\n  display: flex;\r\n  margin-top: auto;\r\n  justify-content: space-between;\n}\n.buttons>a[data-v-6d9153be]{\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\r\n  width: 80px;\n}\n.buttons>a[data-v-6d9153be]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\nh2[data-v-6d9153be]{\r\n  width:95%;\r\n  color: #ffffff;\r\n\r\n  font-weight:bold;\r\nmargin:5px 0;\n}\np[data-v-6d9153be]{\r\n  color: black;\n}\r\n", ""]);
+exports.push([module.i, "\n.card-container[data-v-6d9153be]{\n    padding:10px;\n}\n.card-body[data-v-6d9153be]{\n  display: flex;\n  flex-direction: column;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n  max-width: none;\n  width: auto;\n  height: 500px;\n}\n.imgCharac[data-v-6d9153be]{\n  margin-bottom: 20px;\n  max-width: 150px !important;\n  max-height: 200px;\n}\n.btn[data-v-6d9153be]{\n  color: #ffffff !important;\n}\n.buttons[data-v-6d9153be]{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n}\n.buttons>a[data-v-6d9153be]{\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n  width: 80px;\n}\n.buttons>a[data-v-6d9153be]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\nh2[data-v-6d9153be]{\n  width:95%;\n  color: #ffffff;\n\n  font-weight:bold;\nmargin:5px 0;\n}\np[data-v-6d9153be]{\n  color: black;\n}\n", ""]);
 
 // exports
 
@@ -7287,7 +7287,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.imgCharac[data-v-7bfedf28]{\r\n  max-width: 266px;\r\n  max-height: 266px;\r\n  margin-bottom: 20px;\n}\n.card[data-v-7bfedf28]{\r\n  display: flex;\r\n  padding: 20px;\r\n  border: 1px solid darkgoldenrod;\r\n  border-radius: 12px;\r\n  background: rgba(154,83,254,0.5);\n}\n.cardBlog[data-v-7bfedf28]{\r\n  padding-top: 10%;\n}\n.card-body[data-v-7bfedf28]{\r\n  margin:9px;\n}\n.btn[data-v-7bfedf28]{\r\n  color: #ffffff;\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\n}\n.btn[data-v-7bfedf28]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\n.buttonadd[data-v-7bfedf28]{\r\n  position: relative;\r\n  margin: 0 auto;\r\n  margin-top: 10px;\n}\n.buttons[data-v-7bfedf28]{\r\n  display: flex;\r\n  margin-top: auto;\r\n  justify-content: space-between;\r\n  margin-bottom: 20px;\n}\n.buttons>a[data-v-7bfedf28]{\r\n  background: rgba(154,83,254,0.5);\r\n  border-radius:3px;\r\n  width: 100px;\r\n  padding: 0 auto !important;\n}\n.buttons>a[data-v-7bfedf28]:hover{\r\n  text-decoration: none;\r\n  background: rgba(154,83,254,1);\n}\nh1[data-v-7bfedf28]{\r\n  margin-left: 20px;\r\n  text-transform: uppercase;\r\n  font-size: 50px;\n}\n.description[data-v-7bfedf28]{\r\n  padding-top: 20px;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.imgCharac[data-v-7bfedf28]{\n  max-width: 266px;\n  max-height: 266px;\n  margin-bottom: 20px;\n}\n.card[data-v-7bfedf28]{\n  display: flex;\n  padding: 20px;\n  border: 1px solid darkgoldenrod;\n  border-radius: 12px;\n  background: rgba(154,83,254,0.5);\n}\n.cardBlog[data-v-7bfedf28]{\n  padding-top: 10%;\n}\n.card-body[data-v-7bfedf28]{\n  margin:9px;\n}\n.btn[data-v-7bfedf28]{\n  color: #ffffff;\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n}\n.btn[data-v-7bfedf28]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\n.buttonadd[data-v-7bfedf28]{\n  position: relative;\n  margin: 0 auto;\n  margin-top: 10px;\n}\n.buttons[data-v-7bfedf28]{\n  display: flex;\n  margin-top: auto;\n  justify-content: space-between;\n  margin-bottom: 20px;\n}\n.buttons>a[data-v-7bfedf28]{\n  background: rgba(154,83,254,0.5);\n  border-radius:3px;\n  width: 100px;\n  padding: 0 auto !important;\n}\n.buttons>a[data-v-7bfedf28]:hover{\n  text-decoration: none;\n  background: rgba(154,83,254,1);\n}\nh1[data-v-7bfedf28]{\n  margin-left: 20px;\n  text-transform: uppercase;\n  font-size: 50px;\n}\n.description[data-v-7bfedf28]{\n  padding-top: 20px;\n}\n\n", ""]);
 
 // exports
 
@@ -38620,8 +38620,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\aionGRPlaravel\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/aionGRPlaravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
